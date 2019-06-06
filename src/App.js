@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
 import Login from './components/login'
-// import Navbar from './containers/navbar'
-// import Sidebar from './containers/sidebar'
+import Home from './components/home'
 
 import './App.css';
 
 function App() {
 
-  // const [view, setView] = useState()
+  const [view, setView] = useState(false)
+  // Remove hook and use store/redux?
+  //https://auth0.com/blog/handling-authentication-in-react-with-context-and-hooks/
+
+  const changeView = () => {
+    setView(!view)
+  }
+
+  const handleDisplay = () => {
+    if (!view){
+      return < Login changeView={changeView} />
+    }
+    else{
+      return < Home changeView={changeView} />
+    }
+  }
 
   return (
     <div className="App">
-      < Login />
-      {/* < Navbar /> */}
-      {/* < Sidebar /> */}
+      {handleDisplay()}
     </div>
   );
 }
