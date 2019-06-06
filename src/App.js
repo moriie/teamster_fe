@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Login from './components/login'
 // import Navbar from './containers/navbar'
 // import Sidebar from './containers/sidebar'
@@ -6,6 +6,9 @@ import Login from './components/login'
 import './App.css';
 
 function App() {
+
+  // const [view, setView] = useState()
+
   return (
     <div className="App">
       < Login />

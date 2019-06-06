@@ -23,8 +23,9 @@ const Login = () => {
     }
 
     return <div className='login-screen'>
-        <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='backdrop' alt=''/>
+        <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         <div className='blur-box'>
+            <h1>Teamster</h1>
             <form onSubmit={handleOnSubmit} className='login-form'>
                 <label>Username</label><br />
                 <input type='text' value={cred.username} name='username' onChange={handleOnChange} /><br />

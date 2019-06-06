@@ -1,6 +1,6 @@
-html {
-  width: 100vw;
-  height: 100vh;
+body {
+  width: 100%;
+  height: 100%;
 }
 
 .App {
@@ -45,9 +45,9 @@ img.profile-btn {
   position: relative;
 }
 
-.backdrop {
-  max-height: 100%;
-  max-width: 100%;
+.bg {
+  height: 100vh;
+  width: 100%;
 }
 
 div.blur-box {
@@ -61,8 +61,12 @@ div.blur-box {
   /* background-image: linear-gradient(hsla(213, 20%, 36%, 0.5), hsla(212, 22%, 13%, 0.5)); */
 }
 
+.blur-box h1 {
+  font-size: 60px;
+  color: linear-gradient(cyan, azure)
+}
+
 form.login-form {
-  padding-top: 19%;
   font-size: 28px;
 }
 
