@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :location
       t.string :avatar
+      t.integer :network_id
 
       t.timestamps
     end
