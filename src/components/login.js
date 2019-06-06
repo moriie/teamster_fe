@@ -11,11 +11,7 @@ const Login = () => {
     }
 
     const handleOnSubmit = (e) => {
-        // Login to user
-        // fetch(URL, {
-        //     method: 'POST',
-        // })
-
+        this.
         setCred({
             username: '',
             password: '',
@@ -25,7 +21,7 @@ const Login = () => {
     return <div className='login-screen'>
         <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         <div className='blur-box'>
-            <h1>Teamster</h1>
+            <h1>Teamster</h1><br />
             <form onSubmit={handleOnSubmit} className='login-form'>
                 <label>Username</label><br />
                 <input type='text' value={cred.username} name='username' onChange={handleOnChange} /><br />

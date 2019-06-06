@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import Login from './components/login'
 import Home from './components/home'
+import rootReducer from './reducers/rootreducer'
 
 import './App.css';
 
+
+
 function App() {
 
-  const [view, setView] = useState(false)
+  const AuthUser = React.createContext()
+
+  const [view, setView] = useReducer(rootReducer, )
+
   // Remove hook and use store/redux?
   //https://auth0.com/blog/handling-authentication-in-react-with-context-and-hooks/
 
@@ -16,16 +22,18 @@ function App() {
 
   const handleDisplay = () => {
     if (!view){
-      return < Login changeView={changeView} />
+      return < Login />
     }
     else{
-      return < Home changeView={changeView} />
+      return < Home />
     }
   }
 
   return (
     <div className="App">
-      {handleDisplay()}
+    <AuthUser.Provider value={{view, changeView}}>
+        {handleDisplay()}
+    </AuthUser.Provider>
     </div>
   );
 }
