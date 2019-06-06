@@ -41,6 +41,31 @@ img.profile-btn {
   right: 0;
 }
 
+.login-screen {
+  position: relative;
+}
+
+.backdrop {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+div.blur-box {
+  top: 25%;
+  left: 30%;
+  height: 40%;
+  width: 40%;
+  position: absolute;
+  z-index: 99;
+  background-color: hsla(213, 20%, 36%, 0.7);
+  /* background-image: linear-gradient(hsla(213, 20%, 36%, 0.5), hsla(212, 22%, 13%, 0.5)); */
+}
+
+form.login-form {
+  padding-top: 19%;
+  font-size: 28px;
+}
+
 .clearfix{
   content: "";
   clear: both;
