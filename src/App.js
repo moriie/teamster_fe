@@ -11,7 +11,7 @@ function App() {
 
   const AuthUser = React.createContext()
 
-  const [view, setView] = useReducer(rootReducer, )
+  const [view, setView] = useState(false)
 
   // Remove hook and use store/redux?
   //https://auth0.com/blog/handling-authentication-in-react-with-context-and-hooks/
