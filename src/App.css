@@ -42,8 +42,9 @@ img.profile-btn {
   right: 0;
 }
 
-.login-screen {
+.splash {
   position: relative;
+  color: white;
 }
 
 .bg {
