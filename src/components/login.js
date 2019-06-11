@@ -30,6 +30,7 @@ const Login = () => {
         
         setUsername('')
         setPassword('')
+        window.history.back()
     }
 
     return <div className='splash'>

@@ -41,6 +41,7 @@ const Signup = () => {
         setEmail('')
         setAge('')
         setLocation('')
+        window.history.back()
     }
 
     return <div className='splash'>
@@ -66,7 +67,6 @@ const Signup = () => {
 }
 
 export default Signup;
-
 
 
 
