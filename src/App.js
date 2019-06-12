@@ -1,23 +1,22 @@
-import React, { Fragment, useState, useReducer, useContext } from 'react';
+import React, { useState, useEffect, createContext, useReducer } from 'react';
 import { Routes } from './routes'
-import Login from './components/login'
-import Signup from './components/signup'
-import Home from './components/home'
 
 import './App.css';
 
-export const AuthUser = React.createContext([{}, ()=>{}])
+export const AuthUser = createContext({}, ()=>{})
 
 export function App() {
-  
-  const [credentials, setCredentials] = useState({})
-  
+
+  const [user, setUser] = useState({})
+
+  console.log(user)
+    
   return (
-    <div className="App">
-    <AuthUser.Provider value={[credentials, setCredentials]}>
-          < Routes />
+    <AuthUser.Provider value={[user, setUser]}>
+      <div className="App">
+            < Routes />
+      </div>
     </AuthUser.Provider>
-    </div>
   );
 }
 
@@ -65,11 +64,15 @@ export function App() {
         // return <div className='splash'>
         //   <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         //   <div className='blur-box'>
-            {/* <button name='login' onClick={handleClick}>Login</button> */}
-            {/* <button name='signup' onClick={handleClick}>Signup</button> */}
-            {/* < NavLink to='/login'>Login</ NavLink> */}
-            {/* < NavLink to='/signup'>Signup</ NavLink> */}
+            // {/* <button name='login' onClick={handleClick}>Login</button> */}
+            // {/* <button name='signup' onClick={handleClick}>Signup</button> */}
+            // {/* < NavLink to='/login'>Login</ NavLink> */}
+            // {/* < NavLink to='/signup'>Signup</ NavLink> */}
         //   </div>
         // </div>
   //   }
   // }
+
+// import Login from './components/login'
+// import Signup from './components/signup'
+// import Home from './components/home'

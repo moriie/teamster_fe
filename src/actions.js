@@ -1,8 +1,8 @@
 
-export const createUser = user => {
-    return {
-        type: 'CREATE_USER', user
-    }
-}
+// export const createUser = user => {
+//     return {
+//         type: 'CREATE_USER', user
+//     }
+// }
 
 

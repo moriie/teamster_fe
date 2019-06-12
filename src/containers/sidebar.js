@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const Sidebar = () => {
 
-    const [display, setDisplay] = useState(true)
+    // const [display, setDisplay] = useState(true)
 
     return (
         <div id='sidebar'>

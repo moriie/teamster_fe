@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react'
 import { AuthUser } from '../App'
 
-const Login = () => {
+const Login = (props) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const [credentials, setCredentials] = useContext(AuthUser)
+    const [user, setUser] = useContext(AuthUser)
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
@@ -16,7 +16,6 @@ const Login = () => {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${credentials.jwt}`
             },
             body: JSON.stringify({
                 user:{
@@ -26,11 +25,18 @@ const Login = () => {
             })
         })
         .then(res=>res.json())
-        .then((json)=>{setCredentials({...credentials, json})})
+        .then((json)=>{
+            setUser({...json.user})
+            let tmr = new Date(Date.now()+86400000)
+            document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/`
+        })
         
-        setUsername('')
-        setPassword('')
-        window.history.back()
+        
+        // setUsername('')
+        // setPassword('')
+
+        props.history.push('/dashboard')
+
     }
 
     return <div className='splash'>

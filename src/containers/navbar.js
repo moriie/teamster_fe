@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 
 const Navbar = () => {
 
-    const [display, setDisplay] = useState(true);
-
     return (
     <div id='navbar'>
         <h1>Navbar</h1>

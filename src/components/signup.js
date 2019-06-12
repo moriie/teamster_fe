@@ -1,8 +1,8 @@
 import React, { useState, useReducer, useContext } from 'react'
 import { AuthUser } from '../App'
-import rootReducer from '../reducers/rootreducer'
+// import rootReducer from '../reducers/rootreducer'
 
-const Signup = () => {
+const Signup = (props) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -10,18 +10,18 @@ const Signup = () => {
     const [age, setAge] = useState('')
     const [location, setLocation] = useState('')
 
-    const [credentials, setCredentials] = useContext(AuthUser)
+    const [user, setUser] = useContext(AuthUser)
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
+
+
 
         fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${credentials.jwt}`
-
             },
             body: JSON.stringify({
                 user: {
@@ -34,14 +34,20 @@ const Signup = () => {
             })
         })
         .then(res=>res.json())
-        .then((json)=>{setCredentials({...credentials, user: json})})
+        .then((json)=>{
+            setUser({...json.user})
+            let tmr = new Date(Date.now()+86400000)
+            document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/'`
+        })
 
-        setUsername('')
-        setPassword('')
-        setEmail('')
-        setAge('')
-        setLocation('')
-        window.history.back()
+        // setUsername('')
+        // setPassword('')
+        // setEmail('')
+        // setAge('')
+        // setLocation('')
+        
+        props.history.push('/dashboard')
+
     }
 
     return <div className='splash'>

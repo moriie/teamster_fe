@@ -10,11 +10,10 @@ import Splash from './components/splash'
 export const Routes = () => {
     return (
         <Switch>
+            <Route exact path='/dashboard' component={Home} />
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />
-            <Route exact path='/user/:id' component={Home} />
             <Route exact path='/' component={Splash} />
-
         </Switch>
     )
 }

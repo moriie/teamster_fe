@@ -5,8 +5,6 @@ import Sidebar from '../containers/sidebar'
 
 const Home = () => {
 
-
-
     return <div className='home'>
         < Navbar />
         < Sidebar />
