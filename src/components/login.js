@@ -32,8 +32,8 @@ const Login = (props) => {
         })
         
         
-        // setUsername('')
-        // setPassword('')
+        setUsername('')
+        setPassword('')
 
         props.history.push('/dashboard')
 
@@ -44,7 +44,7 @@ const Login = (props) => {
         <div className='blur-box'>
             <h1>Teamster</h1><br />
             <form onSubmit={(e)=>handleOnSubmit(e)} className='login-form'>
-                <label>Username</label><br />
+                <label>Username {user.id}</label><br />
                 <input type='text' value={username} name='username' onChange={e=>setUsername(e.target.value)} /><br />
                 <label>Password</label> <br />
                 <input type='password' value={password} name='password' onChange={e=>setPassword(e.target.value)} /><br />

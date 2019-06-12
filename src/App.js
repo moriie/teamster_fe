@@ -9,8 +9,18 @@ export function App() {
 
   const [user, setUser] = useState({})
 
-  console.log(user)
-    
+  useEffect(()=>{
+    if (document.cookie && !document.cookie.match(/undefined/)){
+        fetch('http://localhost:3000/session', {
+            headers: {
+                "Authorization": document.cookie
+            }
+        })
+        .then(res=>res.json())
+        .then(json=>setUser({...json.user}))
+    }
+  }, [])
+
   return (
     <AuthUser.Provider value={[user, setUser]}>
       <div className="App">

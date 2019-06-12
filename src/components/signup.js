@@ -15,8 +15,6 @@ const Signup = (props) => {
     const handleOnSubmit = (e) => {
         e.preventDefault()
 
-
-
         fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: {
@@ -40,11 +38,11 @@ const Signup = (props) => {
             document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/'`
         })
 
-        // setUsername('')
-        // setPassword('')
-        // setEmail('')
-        // setAge('')
-        // setLocation('')
+        setUsername('')
+        setPassword('')
+        setEmail('')
+        setAge('')
+        setLocation('')
         
         props.history.push('/dashboard')
 
