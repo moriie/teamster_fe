@@ -17,10 +17,11 @@ export function App() {
             }
         })
         .then(res=>res.json())
-        // .then(json=>console.log(json))
         .then(json=>setUser({...user, ...json}))
     }
   }, [])
+
+  console.log(user)
 
   return (
     <AuthUser.Provider value={[user, setUser]}>
