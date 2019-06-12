@@ -33,7 +33,7 @@ const Signup = (props) => {
         })
         .then(res=>res.json())
         .then((json)=>{
-            setUser({...json.user})
+            setUser(json)
             let tmr = new Date(Date.now()+86400000)
             document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/'`
         })

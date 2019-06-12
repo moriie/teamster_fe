@@ -17,7 +17,8 @@ export function App() {
             }
         })
         .then(res=>res.json())
-        .then(json=>setUser({...json.user}))
+        // .then(json=>console.log(json))
+        .then(json=>setUser({...user, ...json}))
     }
   }, [])
 

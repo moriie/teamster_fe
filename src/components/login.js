@@ -8,6 +8,7 @@ const Login = (props) => {
 
     const [user, setUser] = useContext(AuthUser)
 
+
     const handleOnSubmit = (e) => {
         e.preventDefault()
 
@@ -26,7 +27,7 @@ const Login = (props) => {
         })
         .then(res=>res.json())
         .then((json)=>{
-            setUser({...json.user})
+            setUser(json)
             let tmr = new Date(Date.now()+86400000)
             document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/`
         })
