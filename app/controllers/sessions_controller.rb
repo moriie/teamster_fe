@@ -11,6 +11,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def auth_check
+    user = current_user
+
+    if user
+      render json: user
+    else
+      render json: {error: 'Please login.'}
+    end
+  end
+
   def destroy
     # session[:user_id] = nil
   end

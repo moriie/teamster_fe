@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :index]
 
     def profile
         render json: { user: current_user }, status: :accepted
+    end
+
+    def index
+        render json: User.all
     end
 
     def create
@@ -25,6 +29,6 @@ class UsersController < ApplicationController
     private
 
     def u_params
-        params.require(:user).permit(:username, :password, :age, :location, :email)
+        params.require(:user).permit(:username, :password, :age, :location, :email, :avatar)
     end
 end
