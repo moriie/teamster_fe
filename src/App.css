@@ -28,9 +28,14 @@ body {
   list-style-type: none;
 }
 
+a {
+  color: transparent;
+}
+
 h1 {
   margin: 0 0 0 0;
   font-size: 48px;
+
 }
 
 img.profile-btn {
@@ -42,7 +47,12 @@ img.profile-btn {
 }
 
 .splash {
+  max-height: 100%;
+  max-width: 100%;
   position: relative;
+  /* align-content: center; */
+  /* justify-content: center; */
+  text-align: center;
   color: white;
 }
 
@@ -51,13 +61,24 @@ img.profile-btn {
   max-width: 100%;
 }
 
-.textarea {
+/* .textarea {
   width: 200px;
   height:200px;
+} */
+
+div.front-page {
+  top: 15%;
+  left: 30%;
+  height: 40%;
+  width: 40%;
+  position: absolute;
+  z-index: 98;
+  /* background-color: hsla(213, 20%, 36%, 0.7); */
+  /* background-image: linear-gradient(hsla(213, 20%, 36%, 0.5), hsla(212, 22%, 13%, 0.5)); */
 }
 
 div.blur-box {
-  top: 25%;
+  top: 20%;
   left: 30%;
   height: 40%;
   width: 40%;
@@ -65,6 +86,28 @@ div.blur-box {
   z-index: 99;
   background-color: hsla(213, 20%, 36%, 0.7);
   /* background-image: linear-gradient(hsla(213, 20%, 36%, 0.5), hsla(212, 22%, 13%, 0.5)); */
+}
+
+.front-page button {
+  height: 100px;
+  width: 250px;  
+  font-size: 36px;
+  margin-top: 25px;
+}
+
+.front-page button:visited {
+  text-decoration: none!important;
+
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+h1.app-name {
+  margin-top: 0;
+  display: block;
+  position: relative;
+  z-index: 99;
+  font-size: 128px;
 }
 
 form.login-form {

@@ -6,8 +6,6 @@ import Interface from '../containers/interface'
 
 const Home = () => {
 
-
-
     return <div className='home'>
         < Navbar />
         < Sidebar />

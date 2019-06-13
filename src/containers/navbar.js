@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import sr from '../scrollreveal'
 
 import { AuthUser } from '../App'
 
@@ -8,10 +9,12 @@ const Navbar = () => {
     const [user, setUser] = useContext(AuthUser)
 
     console.log(user)
+
+    sr.reveal('.nav-title', {duration: 5000})
     
     return (
     <div id='navbar'>
-        <h1>Navbar</h1>
+        <h1 className='nav-title'>Navbar</h1>
         <span> 
             <img src='' name='teamster-logo' alt='' />
             <NavLink to='/goal/create'>Button 1</NavLink> 
