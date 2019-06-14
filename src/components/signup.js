@@ -1,5 +1,11 @@
 import React, { useState, useContext } from 'react'
 import { AuthUser } from '../App'
+import { NavLink } from 'react-router-dom'
+import Fade from '@material-ui/core/Fade'
+import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
+
 
 const Signup = (props) => {
 
@@ -40,22 +46,25 @@ const Signup = (props) => {
 
     return <div className='splash'>
         <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
-        <div className='blur-box'>
-        <h1>Signup</h1><br />
-            <form className='signup-form' onSubmit={(e)=>handleOnSubmit(e)}>
-                <label>Username</label><br />
-                <input type='text' value={creds.username} name='username' onChange={handleOnChange} /><br />
-                <label>Password</label> <br />
-                <input type='password' value={creds.password} name='password' onChange={handleOnChange} /><br />
-                <label>Email</label> <br />
-                <input type='text' value={creds.email} name='email' onChange={handleOnChange} /><br />
-                <label>Age</label> <br />
-                <input type='text' value={creds.age} name='age' onChange={handleOnChange} /><br />
-                <label>Location</label> <br />
-                <input type='text' value={creds.location} name='location' onChange={handleOnChange} /> <br />
-                <input type='submit' value='submit' />
-            </form>
-        </div>
+        <Fade in={true} timeout={2000}>
+            <div className='blur-box'>
+            <h1>Signup</h1><br />
+                <form className='signup-form' onSubmit={(e)=>handleOnSubmit(e)}>
+                    <label>Username</label><br />
+                    <input type='text' value={creds.username} name='username' onChange={handleOnChange} /><br />
+                    <label>Password</label> <br />
+                    <input type='password' value={creds.password} name='password' onChange={handleOnChange} /><br />
+                    <label>Email</label> <br />
+                    <input type='text' value={creds.email} name='email' onChange={handleOnChange} /><br />
+                    <label>Age</label> <br />
+                    <input type='text' value={creds.age} name='age' onChange={handleOnChange} /><br />
+                    <label>Location</label> <br />
+                    <input type='text' value={creds.location} name='location' onChange={handleOnChange} /> <br />
+                    <Button variant='contained' size='large' color='primary'><input type='submit' value='submit'></input></Button>
+                </form>
+                <p>Have an account already? <NavLink to='/login'>Login</NavLink></p>
+            </div>
+        </Fade>
     </div>
 
 }

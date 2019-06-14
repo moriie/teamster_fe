@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthUser } from '../App'
 import sr from '../scrollreveal'
@@ -29,10 +29,9 @@ const Splash = (props) => {
     return <div className='splash'>
         <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         <div className='front-page'>
-            {/* <h1 className='app-name'>Teamster</h1> */}
-            <h1 className='app-name'>{createTitle()}</h1>
-            < Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link><br />
-            < Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link>
+\            <h1 className='app-name'>{createTitle()}</h1>
+            < Link to='/login'><Button variant='contained' size='large' color='primary'>Login</Button></Link><br />
+            < Link to='/signup'><Button variant='contained' size='large' color='primary'>Signup</Button></ Link>
         </div>
     </div>
 }
