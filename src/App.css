@@ -29,7 +29,7 @@ body {
 }
 
 a {
-  color: blue;
+  color: rgb(166, 230, 255);
   text-decoration: none;
 }
 
@@ -71,9 +71,10 @@ div.front-page {
 }
 
 div.blur-box {
-  top: 20%;
+  display: flex;
+  flex-direction: column;
+  top: 15%;
   left: 30%;
-  height: 40%;
   width: 40%;
   position: absolute;
   z-index: 99;
@@ -86,13 +87,6 @@ div.blur-box {
   width: 250px;  
   font-size: 36px;
   margin-top: 25px;
-}
-
-.front-page button:visited {
-  text-decoration: none!important;
-
-  -webkit-box-shadow: none!important;
-  box-shadow: none!important;
 }
 
 h1.app-name {
@@ -109,6 +103,31 @@ div.blur-box h1{
 
 form.login-form {
   font-size: 28px;
+}
+
+div.blur-box .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+div.blur-box .MuiFormLabel-root{
+  color: white;
+}
+
+div.MuiInputBase-root {
+  color: white;
+}
+
+div.blur-box .MuiInput-underline:before {
+  border-bottom: none;
+}
+
+div.blur-box .MuiInput-underline:after {
+  border-bottom: none;
+}
+
+
+div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: none;
 }
 
 .clearfix{
