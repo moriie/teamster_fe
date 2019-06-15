@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthUser } from '../App'
 import sr from '../scrollreveal'
@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button'
 
 
 const Splash = (props) => {
+
 
     useEffect(()=>{
         for (let n = 0; n < 8; n++){
@@ -32,8 +33,8 @@ const Splash = (props) => {
         <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         <div className='front-page'>
             <h1 className='app-name'>{createTitle()}</h1>
-            < Link to='/login'><Button variant='contained' size='large' color='primary'>Login</Button></Link><br />
-            < Link to='/signup'><Button variant='contained' size='large' color='primary'>Signup</Button></ Link>
+            < Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link><br />
+            < Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link>
         </div>
     </div>
 }

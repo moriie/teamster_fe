@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField'
 
 const Signup = (props) => {
 
-    const [creds, setCreds] = useState({})
+    const [creds, setCreds] = useState({username: '', password: '', email: '', age: '', location: ''})
 
     const [user, setUser] = useContext(AuthUser)
 
@@ -20,9 +20,14 @@ const Signup = (props) => {
     }
 
     const textStyles = {
-        onChange: {handleOnChange},
         margin: 'normal',
         variant: 'outlined',
+    }
+
+    const handleOnClick = (e) => {
+        if (e.target.className === 'bg'){
+            props.history.push('/')
+        }
     }
 
     const handleOnSubmit = (e) => {
@@ -50,17 +55,17 @@ const Signup = (props) => {
 
     }
 
-    return <div className='splash'>
+    return <div className='splash' onClick={handleOnClick}>
         <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
         <Fade in={true} timeout={2000}>
             <div className='blur-box'>
             <h1>Signup</h1><br />
                 <form className='signup-form' onSubmit={(e)=>handleOnSubmit(e)}>
-                    <TextField label='Username' type='text' value={creds.username} name='username' {...textStyles} /><br />
-                    <TextField label='Password' type='password' value={creds.password} name='password' {...textStyles}/><br />
-                    <TextField label='Email' type='text' value={creds.email} name='email' {...textStyles}/><br />
-                    <TextField label='Age' type='text' value={creds.age} name='age'  {...textStyles}/><br />
-                    <TextField label='Location (Zip Code)' type='text' value={creds.location} name='location' {...textStyles}/><br />
+                    <TextField label='Username' type='text' value={creds.username} name='username' onChange={handleOnChange} {...textStyles} /><br />
+                    <TextField label='Password' type='password' value={creds.password} name='password' onChange={handleOnChange} {...textStyles}/><br />
+                    <TextField label='Email' type='text' value={creds.email} name='email' onChange={handleOnChange} {...textStyles}/><br />
+                    <TextField label='Age' type='text' value={creds.age} name='age' onChange={handleOnChange} {...textStyles}/><br />
+                    <TextField label='Location (Zip Code)' type='text' value={creds.location} name='location' onChange={handleOnChange} {...textStyles}/><br />
                     <Button variant='contained' size='large' color='primary'><Input type='submit' value='submit'></Input></Button>
                 </form>
                 <p>Have an account already? <NavLink to='/login'>Login</NavLink></p>
@@ -71,40 +76,3 @@ const Signup = (props) => {
 }
 
 export default Signup;
-
-
-
-    // const [cred, setCred] = useState({username: '', password: '', email: '', age: '', location: ''})
-    
-    // const [user, dispatchuser] = useReducer(rootReducer, {username: '', password: '', email: '', age: '', location: ''})
-
-    // const handleOnChange = (e) => {
-    //     let newCred = cred
-    //     newCred[name] = value
-    //     setCred(newCred)
-    // }
-
-
-    //Split states below. Changed 6/12/2019 to object state.
-
-    // const [username, setUsername] = useState('')
-    // const [password, setPassword] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [age, setAge] = useState('')
-    // const [location, setLocation] = useState('')
-
-        // setUsername('')
-        // setPassword('')
-        // setEmail('')
-        // setAge('')
-        // setLocation('')
-
-
-                // user: {
-                //     username: username,
-                //     password: password,
-                //     email: email,
-                //     age: age,
-                //     location: location,
-                    // avatar: `https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png`
-                // }

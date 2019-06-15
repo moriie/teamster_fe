@@ -62,7 +62,7 @@ const Login = (props) => {
                 <h1>Login</h1><br />
                 <form onSubmit={(e)=>handleOnSubmit(e)} className='login-form'>
                     <TextField label='Username' type='text' value={username} name='username' onChange={e=>setUsername(e.target.value)} {...textStyles}/><br />
-                    <TextField label='Password' type='password' value={password} name='password' onChange={e=>setUsername(e.target.value)} {...textStyles}/><br />
+                    <TextField label='Password' type='password' value={password} name='password' onChange={e=>setPassword(e.target.value)} {...textStyles}/><br />
                     <Button variant='contained' size='large' color='primary'><Input type='submit' value='submit'></Input></Button>
                 </form>
                 <p>Don't have an account? <NavLink to='/signup'>Signup</NavLink></p>
