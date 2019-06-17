@@ -1,9 +1,16 @@
 import React, { Fragment, useState, useContext } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import InputLabel from '@material-ui/core/InputLabel'
+import FormControl from '@material-ui/core/FormControl'
+import Button from '@material-ui/core/Button'
+
 import { AuthUser } from '../App'
 
 const GoalForm = () => {
 
-    const [goal, setGoal] = useState({num: '1', interval: ''})
+    const [goal, setGoal] = useState({repeatable: false, num: '1', interval: '1'})
     const [user, setUser] = useContext(AuthUser)
 
     const handleOnSubmit = (e) => {
@@ -42,16 +49,15 @@ const GoalForm = () => {
         if (!!goal.repeatable){
             return <Fragment>
                 <label>How often would you like to repeat this goal?</label> <br />
-                <label>Every </label>
+                <label>Every </label><br />
                 {createTime()}
-                <select name="interval" value={goal.interval} onChange={handleOnChange} defaultValue=''>
-                    <option value=''>Select Interval</option>
-                    <option value='1'>Hour(s)</option>
-                    <option value='24'>Day(s)</option>
-                    <option value='168'>Week(s)</option>
-                    <option value='730'>Month(s)</option>
-                    <option value='8760'>Year(s)</option>
-                </select><br />
+                <Select name="interval" value={goal.interval} onChange={handleOnChange}>
+                    <MenuItem value='1'>Hour(s)</MenuItem>
+                    <MenuItem value='24'>Day(s)</MenuItem>
+                    <MenuItem value='168'>Week(s)</MenuItem>
+                    <MenuItem value='730'>Month(s)</MenuItem>
+                    <MenuItem value='8760'>Year(s)</MenuItem>
+                </Select><br />
                 </Fragment>
         }
         else{
@@ -82,30 +88,36 @@ const GoalForm = () => {
                 default: n=12
             }
             for (let a = 1; a <= n; a++){
-                optionsArr.push(<option value={a}>{a}</option>)
+                optionsArr.push(<MenuItem value={a}>{a}</MenuItem>)
             }
             return (                 
-                <select name="num" value={goal.num} onChange={handleOnChange} defaultValue='1'>
+                <Select name="num" value={goal.num} onChange={handleOnChange}>
                 {optionsArr}
-                </select>
+                </Select>
             )
         }
     }
 
     console.log(goal)
 
-    return <form onSubmit={handleOnSubmit}>
+    return <div id='goalform'>
+        <h1>Goalform</h1>
+        <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
-        <textarea value={goal.description} onChange={handleOnChange} name='description' placeholder='Enter Goal Description.' className='textarea'/> <br />
-        <label>Do you want to repeat this goal?</label><br />
-        <select name="repeatable" value={goal.repeatable} onChange={handleOnChange} defaultValue={false}>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-        </select><br />
+        <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='Description' className='textarea'/> <br />
+        {/* <label>Do you want to repeat this goal?</label><br /> */}
+        <FormControl>
+            <InputLabel htmlFor='repeat'>Repeat?</InputLabel>
+            <Select id='repeat' name="repeatable" value={goal.repeatable} onChange={handleOnChange}>
+                <MenuItem value={true}>Yes</MenuItem>
+                <MenuItem value={false}>No</MenuItem>
+            </Select>
+        </FormControl><br />
         {showTimeBasis()}
         {/* Add Calendar Dropdown here? "Select When To Begin" */}
-        <input type='submit' value='submit' />
-    </form>
+        <Button type='submit' value='submit' variant='outlined'>Submit</Button>
+        </form>
+    </div>
 }
 
 export default GoalForm

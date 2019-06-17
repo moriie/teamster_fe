@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import Navbar from '../containers/navbar'
 import Sidebar from '../containers/sidebar'
 import Interface from '../containers/interface'
@@ -6,9 +6,19 @@ import Interface from '../containers/interface'
 
 const Home = () => {
 
-    return <div className='home'>
+    const [sidebar, setSidebar] = useState(false)
+
+    const viewSidebar = () => {
+        return sidebar ? < Sidebar /> : null
+    }
+
+    const setGrid = () => {
+        return sidebar ? 'home' : 'home no-sidebar'
+    }
+
+    return <div className={setGrid()}>
         < Navbar />
-        < Sidebar />
+        {viewSidebar()}
         < Interface />
     </div>
 }

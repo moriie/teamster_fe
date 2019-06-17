@@ -21,8 +21,8 @@ const Navbar = () => {
                     <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
                 </NavLink>
             </Fade>
-            <NavLink to='/' className='navbar-link'>Button 1</NavLink> 
-            <NavLink to='/login' className='navbar-link'>Button 2</NavLink> 
+            {/* <NavLink to='/' className='navbar-link'>Button 1</NavLink>  */}
+            {/* <NavLink to='/login' className='navbar-link'>Button 2</NavLink>  */}
             <Avatar src={user.avatar} alt='user-prof-default' className='profile-btn'/> 
         </span>
     </div>)
