@@ -1,26 +1,78 @@
 body {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   text-align: center;
   overflow: hidden;
 }
 
-#navbar{
-  background-image: linear-gradient(rgb(161, 161, 241), rgb(135, 135, 241), rgb(86, 86, 211), rgb(48, 48, 163));
-  min-height: 15%;
-  width: 100%;
-  position: relative;
+.app{
+  width: 100vw;
+  height: 100vh;
+}
+
+.home{
+  background-image: url('https://argushd.com/wp-content/uploads/2016/03/Abstract-Backgrounds-Website-Background-Blue-Wallpaper-1920x1080.jpg');
+  height: 100vh;
+  width: 100vw;
+  margin-right: 0;
+  display: grid;
   color: white;
+  grid-template-rows: repeat(10, 10%);
+  grid-template-columns: repeat(5, 20%);
+  grid-template-areas:
+    "navbar navbar navbar navbar navbar"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface";
+}
+
+.teamster-logo{
+  height: 100%;
+  width: 5%;
+}
+
+.teamster-name{
+  position:absolute;
+  height: 3.5%;
+  width: 3.5%;
+  top: 3.25%;
+  left: 1%;
+  pointer-events: none;
+}
+
+.teamster-logo:hover{
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#navbar{
+  grid-area: navbar;
+  border: 3px solid black;
 }
 
 #sidebar{
-  background-color: rgb(74, 74, 99);
-  display: block;
-  color: white;
-  float: left;
-  width: 20%;
-  height: 91vh;
+  grid-area: sidebar;
+  border: 3px solid black;
+}
 
+#interface{
+  grid-area: interface;
+  border: 3px solid black;
+}
+
+.teamster-logo{
+  float: left;
 }
 
 .goals-list {
@@ -31,14 +83,6 @@ body {
 a {
   color: rgb(166, 230, 255);
   text-decoration: none;
-}
-
-img.profile-btn {
-  position: absolute;
-  max-height: 100%;
-  max-width: 7.5%;
-  top: 0;
-  right: 0;
 }
 
 .splash {
@@ -122,6 +166,17 @@ div.blur-box .MuiInput-underline:after {
 
 div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
   border-bottom: none;
+}
+
+#navbar div.MuiAvatar-root{
+  width: 5%;
+  height: 100%;
+  float: right;
+}
+
+.MuiAvatar-img{
+  width: 100%;
+  height: 100%;
 }
 
 .clearfix{
