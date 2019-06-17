@@ -6,6 +6,7 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import './App.css';
 
 export const AuthUser = createContext({}, ()=>{})
+
 export function App() {
 
   const [user, setUser] = useState({})
@@ -21,8 +22,6 @@ export function App() {
         .then(json=>setUser({...user, ...json}))
     }
   }, [])
-
-  console.log(user)
 
   return (
     <AuthUser.Provider value={[user, setUser]}>

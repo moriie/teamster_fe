@@ -17,7 +17,8 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "scrollreveal": "^4.0.5",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",

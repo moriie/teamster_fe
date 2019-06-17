@@ -1,9 +1,9 @@
-import React extends 'react'
+// import React extends 'react'
 
-const UserCard = () => {
+// const UserCard = () => {
 
 
 
-}
+// }
 
-export default UserCard
+// export default UserCard

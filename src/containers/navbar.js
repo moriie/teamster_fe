@@ -9,8 +9,6 @@ import { AuthUser } from '../App'
 const Navbar = () => {
 
     const [user, setUser] = useContext(AuthUser)
-
-    console.log(user)
     
     return (
     <div id='navbar'>
