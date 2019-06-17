@@ -5,12 +5,16 @@ import MenuItem from '@material-ui/core/MenuItem'
 import InputLabel from '@material-ui/core/InputLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
+import { DateTimePicker } from '@material-ui/pickers';
+
 
 import { AuthUser } from '../App'
+
 
 const GoalForm = () => {
 
     const [goal, setGoal] = useState({repeatable: false, num: '1', interval: '1'})
+    const [goaldate, setGoaldate] = useState(new Date())
     const [user, setUser] = useContext(AuthUser)
 
     const handleOnSubmit = (e) => {
@@ -31,7 +35,8 @@ const GoalForm = () => {
                     description: goal.description,
                     repeatable: goal.repeatable,
                     time_basis: time_basis,
-                    user_id: user.id
+                    user_id: user.id,
+                    end_date: goaldate,
                 }
             })
         })
@@ -49,15 +54,17 @@ const GoalForm = () => {
         if (!!goal.repeatable){
             return <Fragment>
                 <label>How often would you like to repeat this goal?</label> <br />
-                <label>Every </label><br />
+                <label>Every... </label><br />
                 {createTime()}
-                <Select name="interval" value={goal.interval} onChange={handleOnChange}>
-                    <MenuItem value='1'>Hour(s)</MenuItem>
-                    <MenuItem value='24'>Day(s)</MenuItem>
-                    <MenuItem value='168'>Week(s)</MenuItem>
-                    <MenuItem value='730'>Month(s)</MenuItem>
-                    <MenuItem value='8760'>Year(s)</MenuItem>
-                </Select><br />
+                <FormControl>
+                    <Select id='interval' name="interval" value={goal.interval} onChange={handleOnChange}>
+                        <MenuItem value='1'>Hour(s)</MenuItem>
+                        <MenuItem value='24'>Day(s)</MenuItem>
+                        <MenuItem value='168'>Week(s)</MenuItem>
+                        <MenuItem value='730'>Month(s)</MenuItem>
+                        <MenuItem value='8760'>Year(s)</MenuItem>
+                    </Select>
+                </FormControl><br />
                 </Fragment>
         }
         else{
@@ -90,11 +97,11 @@ const GoalForm = () => {
             for (let a = 1; a <= n; a++){
                 optionsArr.push(<MenuItem value={a}>{a}</MenuItem>)
             }
-            return (                 
-                <Select name="num" value={goal.num} onChange={handleOnChange}>
+            return <FormControl> 
+                <Select id='num' name="num" value={goal.num} onChange={handleOnChange}>
                 {optionsArr}
                 </Select>
-            )
+            </FormControl>
         }
     }
 
@@ -105,7 +112,8 @@ const GoalForm = () => {
         <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
         <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='Description' className='textarea'/> <br />
-        {/* <label>Do you want to repeat this goal?</label><br /> */}
+            <label>Due Date?</label><br />
+            <DateTimePicker id='end_date' format='LLL' value={goal.end_date} name='end_date' onChange={(e)=>setGoaldate(e._d)}/> <br />
         <FormControl>
             <InputLabel htmlFor='repeat'>Repeat?</InputLabel>
             <Select id='repeat' name="repeatable" value={goal.repeatable} onChange={handleOnChange}>

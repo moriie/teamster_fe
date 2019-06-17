@@ -1,3 +1,4 @@
+
 body {
   width: 100vw;
   height: 100vh;
@@ -215,10 +216,9 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 }
 
 #goalform .MuiSelect-select{
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
   border-radius: 3px;
-  width: 5vw;
-  float: left;
+  width: 4vw;
 }
 
 #goalform .MuiInput-underline:after{
@@ -244,6 +244,18 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 
 #goalform span.MuiButton-label{
   color: white;
+}
+
+#goalform button {
+  border: 1px solid black;
+}
+
+#goalform #end_date {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-left: 2px;
+  width: 13.5vw;
+  text-align: center;
 }
 
 /* ----------------------------- */

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, createContext, useReducer } from 'react';
 import { Routes } from './routes'
+import MomentUtils from '@date-io/moment';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 import './App.css';
 
 export const AuthUser = createContext({}, ()=>{})
-
 export function App() {
 
   const [user, setUser] = useState({})
@@ -25,9 +26,11 @@ export function App() {
 
   return (
     <AuthUser.Provider value={[user, setUser]}>
-      <div className="App">
-            < Routes />
-      </div>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
+        <div className="App">
+              < Routes />
+        </div>
+      </MuiPickersUtilsProvider>
     </AuthUser.Provider>
   );
 }
