@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :sessions, only: [:create, :destroy]
   resources :users
-  resources :goals, only: [:create, :destroy]
+  resources :goals
 
   post 'signup', to: 'users#create', as: 'signup'
   post 'login', to: 'sessions#create', as: 'login'
