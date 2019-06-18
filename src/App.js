@@ -5,7 +5,7 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 import './App.css';
 
-export const AuthUser = createContext({}, ()=>{})
+export const AuthUser = createContext([{}, ()=>{}])
 
 export function App() {
 

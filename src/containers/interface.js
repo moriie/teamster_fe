@@ -1,15 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import GoalForm from '../components/goalform'
 import GoalsContainer from './goalscontainer'
+import Main from './main'
 
+import { ViewState } from '../components/home'
 
 const Interface = () => {
 
-    // const [goalform, setGoalform] = useState(true)
+    const [view, setView] = useContext(ViewState)
+
+    const handleView = () => {
+        switch(view) {
+            case 'goals-container':
+                return <GoalsContainer />
+            break;
+            case 'goals-form':
+                return <GoalForm />
+            break;
+            default:
+                return <Main />
+        }
+    }
 
     return <div id='interface'>
-        <GoalsContainer/>
-        {/* < GoalForm />  */}
+        {handleView()}
     </div>
 
 }

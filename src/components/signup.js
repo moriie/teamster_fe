@@ -40,7 +40,7 @@ const Signup = (props) => {
                 'Accept': 'application/json',
             },
             body: JSON.stringify({
-                user: {...creds, avatar: `https://sumaleeboxinggym.com/wp-content/uploads/2018/06/Generic-Profile-1600x1600.png`}
+                user: {...creds, avatar: `default-prof-pic.png`}
             })
         })
         .then(res=>res.json())

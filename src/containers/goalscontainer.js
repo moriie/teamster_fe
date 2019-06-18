@@ -28,7 +28,7 @@ const GoalsContainer = () => {
     }
 
     return <List className='goals-container'>
-        {createGoals()}
+            {createGoals()}
     </List>
 
 }
