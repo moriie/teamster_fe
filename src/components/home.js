@@ -7,21 +7,11 @@ export const ViewState = createContext([{}, ()=>{}])
 
 const Home = () => {
 
-    const [sidebar, setSidebar] = useState(false)
     const [view, setView] = useState('')
-
-    const viewSidebar = () => {
-        return sidebar ? < Sidebar /> : null
-    }
-
-    const setGrid = () => {
-        return sidebar ? 'home' : 'home no-sidebar'
-    }
     
-    return <div className={setGrid()}>
+    return <div className='home'>
         <ViewState.Provider value={[view, setView]}>
             < Navbar />
-            {viewSidebar()}
             < Interface />
         </ViewState.Provider>
     </div>

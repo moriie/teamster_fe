@@ -21,20 +21,6 @@ body {
   grid-template-rows: repeat(10, 10%);
   grid-template-columns: repeat(5, 20%);
   grid-template-areas:
-    "navbar navbar navbar navbar navbar"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface";
-}
-
-.no-sidebar{
-  grid-template-areas:
   "navbar navbar navbar navbar navbar"
   "interface interface interface interface interface"
   "interface interface interface interface interface"
@@ -44,7 +30,7 @@ body {
   "interface interface interface interface interface"
   "interface interface interface interface interface"
   "interface interface interface interface interface"
-  "interface interface interface interface interface";
+  "interface interface interface interface interface"
 }
 
 .teamster-logo{
@@ -62,6 +48,14 @@ body {
   pointer-events: none;
 }
 
+.teamster-name::selection{
+  background-color: transparent;
+}
+
+.teamster-logo::selection{
+  background-color: transparent;
+}
+
 .teamster-logo:hover{
   -webkit-animation:spin 3s linear infinite;
   -moz-animation:spin 3s linear infinite;
@@ -77,25 +71,19 @@ body {
   display: block;
   box-shadow: 0px 8px 4px #333;
   background-color: rgb(128, 60, 48);
-  /* border: 3px solid black; */
-}
-
-#sidebar{
-  grid-area: sidebar;
-  /* border: 3px solid black; */
 }
 
 #interface{
   grid-area: interface;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  /* border: 3px solid black; */
+  display: grid;
+  grid-template-rows: repeat(20, 5%);
+  grid-template-columns: repeat(5, 20%);
 }
 
-.goals-list {
-  padding-left: 0;
-  list-style-type: none;
+#interface ul.goals-container {
+  grid-area: 1/2/span 20/ span 3;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a {
@@ -207,15 +195,18 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 /* Interface */
 
 #interface .MuiPaper-root{
-  width: 50%;
-  /* padding-left: 10%; */
-  /* padding-right: 10%; */
-  margin-left: 25%;
+  width: 100%;
+  /* margin-left: 25%; */
   margin-top: 1%;
 }
 
 /*-------------------------------*/
 
+/* Goal Container */
+
+#interface 
+
+/*-------------------------------*/
 
 /* Goal Form */
 
@@ -321,21 +312,13 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 /* Navbar */
 
-#navbar button {
+#navbar a.active button {
   margin-top: .5%;
   float: left;
   color: whitesmoke;
 }
 
-#navbar div.MuiAvatar-root{
-  width: 4%;
-  height: 80%;
-  margin-right: .5%;
-  margin-top: .5%;
-  float: right;
-}
-
-.MuiAvatar-img{
+#navbar .MuiAvatar-root{
   width: 100%;
   height: 100%;
 }
@@ -345,6 +328,66 @@ div.MuiTooltip-popper .MuiTooltip-tooltip{
   font-size: 75%;
 }
 
+div.profile-menu{
+  color: whitesmoke;
+  background-color: hsla(213, 20%, 36%, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.753);
+  border-radius: 5px;
+}
+
+/* ----------------------------- */
+
+/* Interface */
+
+#interface div.MuiPaper-root{
+  color: whitesmoke;
+  background-color: rgba(51, 51, 51, 0.144);
+  box-shadow: 6px 4px 6px #333;
+}
+
+#interface #main-header{
+  animation: none;
+}
+
+#interface div.MuiCardHeader-root{
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#interface div.MuiCardHeader-root.main-header{
+  padding-top: 0%;
+  font-size: 30%;
+}
+
+#interface div.MuiCardActions-root{
+  display: flex;
+  flex-direction: row;
+}
+
+#interface div.MuiCardActions-root button{
+  flex: 1 1 0;
+}
+
+
+#interface span.MuiTypography-root{
+  font-size: 450%;
+  pointer-events: none;
+}
+
+#interface p.MuiTypography-root{
+  pointer-events: none;
+}
+
+#interface div.MuiPaper-root:hover{
+  animation: reveal-option .75s ease-in-out forwards;
+}
+
+@keyframes reveal-option { 100% { font-size: 50%}}
+
+#interface .MuiTypography-root::selection{
+  background-color: transparent;
+}
+
 /* ----------------------------- */
 
 .clearfix{
@@ -352,3 +395,34 @@ div.MuiTooltip-popper .MuiTooltip-tooltip{
   clear: both;
   display: table;
 }
+
+
+
+
+
+    /* "navbar navbar navbar navbar navbar"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"
+    "sidebar interface interface interface interface"; */
+
+
+
+/* .no-sidebar{
+  grid-template-areas:
+  "navbar navbar navbar navbar navbar"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface"
+  "interface interface interface interface interface";
+} */

@@ -6,7 +6,7 @@ const AuthRoutes = (props) => {
 
     const [user, setUser] = useContext(AuthUser)
 
-    if (!!document.cookie){
+    if (!!user){
         return <Route component={props.component} />
     }
     else{
