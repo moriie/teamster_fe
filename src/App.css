@@ -87,6 +87,9 @@ body {
 
 #interface{
   grid-area: interface;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   /* border: 3px solid black; */
 }
 
@@ -201,6 +204,19 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 
 /*-------------------------------*/
 
+/* Interface */
+
+#interface .MuiPaper-root{
+  width: 50%;
+  /* padding-left: 10%; */
+  /* padding-right: 10%; */
+  margin-left: 25%;
+  margin-top: 1%;
+}
+
+/*-------------------------------*/
+
+
 /* Goal Form */
 
 #goalform .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-formControl.MuiInputBase-multiline.MuiFilledInput-multiline{
@@ -303,9 +319,12 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 /* ----------------------------- */
 
+/* Navbar */
+
 #navbar button {
-  margin-top: .25%;
+  margin-top: .5%;
   float: left;
+  color: whitesmoke;
 }
 
 #navbar div.MuiAvatar-root{
@@ -320,6 +339,13 @@ div#root div.MuiDrawer-paperAnchorLeft{
   width: 100%;
   height: 100%;
 }
+
+div.MuiTooltip-popper .MuiTooltip-tooltip{
+  margin-top: 0;
+  font-size: 75%;
+}
+
+/* ----------------------------- */
 
 .clearfix{
   content: "";
