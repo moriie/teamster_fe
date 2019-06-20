@@ -34,7 +34,7 @@ const Main = () => {
                     <Button size='medium' variant='outlined' color='inherit' onClick={()=>setView('goals-container')}>
                         View Goals
                     </Button>
-                    <Button size='medium' variant='outlined' color='inherit'>
+                    <Button size='medium' variant='outlined' color='inherit' onClick={()=>setView('goals-form')}>
                         Create Goals
                     </Button>
                     <Button size='medium' variant='outlined' color='inherit'>
@@ -48,14 +48,14 @@ const Main = () => {
                     </CardHeader>
                 </CardContent>
                 <CardActions>
-                <Button size='medium' variant='outlined' color='inherit'>
+                <Button size='medium' variant='outlined' color='inherit' onClick={()=>setView('network-container')}>
                         Your Networks
                     </Button>
                     <Button size='medium' variant='outlined' color='inherit'>
-                        Placeholder 1
+                        Network Goals
                     </Button>
                     <Button size='medium' variant='outlined' color='inherit'>
-                        Placeholder 2
+                        Placeholder 1
                 </Button>
                 </CardActions>
         </Card>

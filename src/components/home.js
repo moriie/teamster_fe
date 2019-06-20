@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 import Navbar from '../containers/navbar'
-import Sidebar from '../containers/sidebar'
+// import Sidebar from '../containers/sidebar'
 import Interface from '../containers/interface'
 
 export const ViewState = createContext([{}, ()=>{}])

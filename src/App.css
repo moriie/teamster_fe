@@ -204,8 +204,10 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 
 /* Goal Container */
 
-#interface 
-
+.goals-container button.create-goal{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 /*-------------------------------*/
 
 /* Goal Form */
@@ -293,10 +295,12 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 #interface .MuiListItem-root:first-child {
   border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 #interface .MuiListItem-root:last-child {
   border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 #interface .MuiListItem-root {

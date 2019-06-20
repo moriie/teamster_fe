@@ -1,11 +1,14 @@
 import React from 'react'
 import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
 
 const GoalCard = (props) => {
 
 
     return <ListItem id={props.goal.id} button={true}>
-        {props.goal.description}
+        <ListItemText>
+            {props.goal.description}
+        </ListItemText>
     </ListItem>
 }
 

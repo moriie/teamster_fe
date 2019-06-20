@@ -31,9 +31,9 @@ const GoalsContainer = () => {
     }
 
     return <Fragment>
-        <List className='goals-container'>
-            <h1>Your Goals</h1>
-            <Button color='inherit' variant='outlined'>Create New Goal</Button>
+        <h1 style={{gridArea: '2/2/span 3/span 3'}}>Your Goals</h1>
+        <Button color='inherit' variant='outlined' className='create-goal' style={{gridArea: '4/3/span 1/span 1'}}>Create New Goal</Button>
+        <List className='goals-container' style={{gridArea: '6/2/span 14/span 3'}}>
                 {createGoals()}
         </List>
     </Fragment>
