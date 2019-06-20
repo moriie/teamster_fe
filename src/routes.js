@@ -8,11 +8,10 @@ import Splash from './components/splash'
 import Unauthorized from './components/unauthorized'
 import AuthRoute from './components/authroutes'
 
-
 export const Routes = () => {
     return (
         <Switch>
-            <AuthRoute path='/dashboard' component={Home} />
+            <AuthRoute exact path='/dashboard' component={Home} />
             <Route exact path='/unauthorized' component={Unauthorized}/>
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/login' component={Login} />

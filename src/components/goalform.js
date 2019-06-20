@@ -41,7 +41,6 @@ const GoalForm = () => {
             })
         })
         .then(res=>res.json())
-        .then(console.log)
     }
 
     const handleOnChange = (e) => {
@@ -105,13 +104,11 @@ const GoalForm = () => {
         }
     }
 
-    console.log(goal)
-
-    return <div id='goalform'>
+    return <div id='goalform' style={{gridArea: '1/3/span 10/span 1'}}>
         <h1>Goalform</h1>
         <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
-        <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='Description' className='textarea'/> <br />
+        <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='description' className='textarea'/> <br />
             <label>Due Date?</label><br />
             <DateTimePicker id='end_date' format='LLL' value={goal.end_date} name='end_date' onChange={(e)=>setGoaldate(e._d)}/> <br />
         <FormControl>
@@ -122,7 +119,6 @@ const GoalForm = () => {
             </Select>
         </FormControl><br />
         {showTimeBasis()}
-        {/* Add Calendar Dropdown here? "Select When To Begin" */}
         <Button type='submit' value='submit' variant='outlined'>Submit</Button>
         </form>
     </div>

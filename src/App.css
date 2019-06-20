@@ -21,7 +21,7 @@ body {
   grid-template-rows: repeat(10, 10%);
   grid-template-columns: repeat(5, 20%);
   grid-template-areas:
-  "navbar navbar navbar navbar navbar"
+  "interface interface interface interface interface"
   "interface interface interface interface interface"
   "interface interface interface interface interface"
   "interface interface interface interface interface"
@@ -67,7 +67,6 @@ body {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 #navbar{
-  grid-area: navbar;
   display: block;
   box-shadow: 0px 8px 4px #333;
   background-color: rgb(128, 60, 48);
@@ -369,6 +368,7 @@ div.profile-menu{
 }
 
 #interface div.MuiCardActions-root button{
+  margin-top: 10%;
   flex: 1 1 0;
 }
 
@@ -382,11 +382,11 @@ div.profile-menu{
   pointer-events: none;
 }
 
-#interface div.MuiPaper-root:hover{
+#interface div.MuiPaper-root:hover div.MuiCardActions-root button{
   animation: reveal-option .75s ease-in-out forwards;
 }
 
-@keyframes reveal-option { 100% { font-size: 50%}}
+@keyframes reveal-option { from {margin-top: 10%} to {margin-top: -5.5%;}}
 
 #interface .MuiTypography-root::selection{
   background-color: transparent;

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
+import { Route, withRouter } from 'react-router-dom'
 import GoalForm from '../components/goalform'
 import GoalsContainer from './goalscontainer'
 import Main from './main'
 import NetworkContainer from './networkcontainer'
 import NetworkForm from '../components/networkform'
 
-import { ViewState } from '../components/home'
+import { ViewState } from '../App'
 
 const Interface = () => {
 
@@ -14,19 +15,19 @@ const Interface = () => {
     const handleView = () => {
         switch (view) {
             case 'goals-container':
-                return <GoalsContainer />
+                return <Route component={GoalsContainer} />
             break;
             case 'goals-form':
-                return <GoalForm />
+                return <Route component={GoalForm} />
             break;
             case 'network-container':
-                return <NetworkContainer />
+                return <Route component={NetworkContainer} />
             break;
             case 'network-form':
-                return <NetworkForm />
+                return <Route component={NetworkForm} />
             break;
             default:
-                return <NetworkForm />
+                return <Route component={Main} />
         }
     }
 
@@ -36,5 +37,5 @@ const Interface = () => {
 
 }
 
-export default Interface
+export default withRouter(Interface)
 

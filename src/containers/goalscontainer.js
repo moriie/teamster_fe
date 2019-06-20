@@ -6,11 +6,13 @@ import Button from '@material-ui/core/Button'
 import sr from '../scrollreveal'
 
 import { AuthUser } from '../App'
+import { ViewState } from '../App'
 
 
 const GoalsContainer = () => {
 
     const [user, setUser] = useContext(AuthUser)
+    const [view, setView] = useContext(ViewState)
     const [goals, setGoals] = useState([])
 
     sr.reveal('ul.goals-container', {duration: 1500})
@@ -22,7 +24,7 @@ const GoalsContainer = () => {
             let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
             setGoals([...goals, ...dbgoals])
         })
-    }, [user])
+    }, [])
 
     const createGoals = () => {
         return goals.map((goal)=>{
@@ -32,7 +34,7 @@ const GoalsContainer = () => {
 
     return <Fragment>
         <h1 style={{gridArea: '2/2/span 3/span 3'}}>Your Goals</h1>
-        <Button color='inherit' variant='outlined' className='create-goal' style={{gridArea: '4/3/span 1/span 1'}}>Create New Goal</Button>
+        <Button color='inherit' variant='outlined' className='create-goal' style={{gridArea: '4/3/span 1/span 1'}} onClick={()=>setView('goals-form')}>Create New Goal</Button>
         <List className='goals-container' style={{gridArea: '6/2/span 14/span 3'}}>
                 {createGoals()}
         </List>

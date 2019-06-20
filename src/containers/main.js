@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 import { AuthUser } from '../App'
-import { ViewState } from '../components/home'
+import { ViewState } from '../App'
 
 const Main = () => {
 
@@ -16,7 +16,7 @@ const Main = () => {
     const [view, setView] = useContext(ViewState)
 
     return <Fragment>
-        <Card style={{gridArea: '2/2/span 3/span 3'}} id='main-header'>
+        <Card style={{gridArea: '1/2/span 3/span 3'}} id='main-header'>
             <CardContent>
                 <CardHeader title={`Hello ${user.username}.`} className='main-header'>
                 </CardHeader>
@@ -25,7 +25,7 @@ const Main = () => {
                 </Typography>
             </CardContent>
         </Card>
-        <Card style={{gridArea: '6/1/span 4/span 2'}}>
+        <Card style={{gridArea: '5/1/span 4/span 2'}}>
                 <CardContent>
                     <CardHeader title={'Goals'}>
                     </CardHeader>
@@ -42,7 +42,7 @@ const Main = () => {
                     </Button>
                 </CardActions>
         </Card>
-        <Card style={{gridArea: '6/4/span 4/span 2'}}>
+        <Card style={{gridArea: '5/4/span 4/span 2'}}>
                 <CardContent>
                     <CardHeader title={'Network'}>
                     </CardHeader>
@@ -59,13 +59,13 @@ const Main = () => {
                 </Button>
                 </CardActions>
         </Card>
-        <Card style={{gridArea: '11/2/span 4/span 3'}}>
+        <Card style={{gridArea: '10/2/span 4/span 3'}}>
             <CardActionArea>
                     <CardHeader title={'Calendar'} style={{marginTop: '3.25%', paddingBottom: '10%'}}>
                     </CardHeader>
             </CardActionArea>
         </Card>
-        <Card style={{gridArea: '16/2/span 4/span 3'}}>
+        <Card style={{gridArea: '15/2/span 4/span 3'}}>
             <CardActionArea>
                     <CardHeader title={'Stats'} style={{marginTop: '3.25%', paddingBottom: '10%'}}>
                     </CardHeader>

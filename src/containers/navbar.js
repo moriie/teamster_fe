@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Fade from '@material-ui/core/Fade'
 import IconButton from '@material-ui/core/IconButton'
@@ -14,9 +14,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Popper from '@material-ui/core/Popper'
 
 import { AuthUser } from '../App'
-import { ViewState } from '../components/home'
+import { ViewState } from '../App'
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     const [user, setUser] = useContext(AuthUser)
     const [view, setView] = useContext(ViewState)
@@ -32,7 +32,7 @@ const Navbar = (props) => {
                     <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
                 </NavLink>
                 <Tooltip title='Home'>
-                    <IconButton onClick={()=>{setView('')}}>
+                    <IconButton onClick={()=>setView('')}>
                             <HomeIcon style={{fontSize: 48}} />
                     </IconButton>
                 </Tooltip >
@@ -75,4 +75,4 @@ const Navbar = (props) => {
     )
 }
 
-export default withRouter(Navbar);
+export default Navbar;
