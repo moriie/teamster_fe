@@ -24,7 +24,7 @@ const GoalsContainer = () => {
             let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
             setGoals([...goals, ...dbgoals])
         })
-    }, [])
+    }, [user])
 
     const createGoals = () => {
         return goals.map((goal)=>{
@@ -33,9 +33,9 @@ const GoalsContainer = () => {
     }
 
     return <Fragment>
-        <h1 style={{gridArea: '2/2/span 3/span 3'}}>Your Goals</h1>
-        <Button color='inherit' variant='outlined' className='create-goal' style={{gridArea: '4/3/span 1/span 1'}} onClick={()=>setView('goals-form')}>Create New Goal</Button>
-        <List className='goals-container' style={{gridArea: '6/2/span 14/span 3'}}>
+        <h1 style={{gridArea: '1/2/span 3/span 3'}}>Your Goals</h1>
+        <Button color='inherit' variant='outlined' className='create-goal' style={{gridArea: '3/3/span 1/span 1'}} onClick={()=>setView('goals-form')}>Create New Goal</Button>
+        <List className='goals-container' style={{gridArea: '4/2/span 14/span 3'}}>
                 {createGoals()}
         </List>
     </Fragment>

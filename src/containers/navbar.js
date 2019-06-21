@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import Avatar from '@material-ui/core/Avatar'
 import Fade from '@material-ui/core/Fade'
 import IconButton from '@material-ui/core/IconButton'
@@ -12,11 +12,13 @@ import Tooltip from '@material-ui/core/Tooltip'
 import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
 import Popper from '@material-ui/core/Popper'
+import ClickAwayListener from '@material-ui/core/ClickAwayListener'
+import Profile from '../components/profile'
 
 import { AuthUser } from '../App'
 import { ViewState } from '../App'
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const [user, setUser] = useContext(AuthUser)
     const [view, setView] = useContext(ViewState)
@@ -42,7 +44,7 @@ const Navbar = () => {
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='View Goals'>
-                    <IconButton>
+                    <IconButton onClick={()=>setView('goals-container')}>
                         <ListIcon style={{fontSize: 48}} />
                     </IconButton>
                 </Tooltip>
@@ -56,23 +58,25 @@ const Navbar = () => {
                         <FriendIcon style={{fontSize: 48}} />
                     </IconButton>
                 </Tooltip>
-            <IconButton style={{float: 'right', padding: 0, margin: '.5% .5%', width: '64px', height: '64px'}} onClick={()=>setmenuState(!menuState)}>
-                <Avatar src={user.avatar} alt='user-prof-default' className='profile-btn'/>
-            </IconButton>
-            <Popper open={menuState} placement='bottom-start' anchorEl={document.querySelector('img.MuiAvatar-img')} className='profile-menu'>
-                <MenuList>
-                    <MenuItem>
-                        Profile
-                    </MenuItem>
-                    <MenuItem>
-                        Logout
-                    </MenuItem>
-                </MenuList>
-            </Popper>
+                <IconButton style={{float: 'right', padding: 0, margin: '.5% .5%', width: '64px', height: '64px'}} onClick={()=>setmenuState(!menuState)}>
+                    <Avatar src={user.avatar} alt='user-profile-pic' className='profile-btn'/>
+                </IconButton>
+                <ClickAwayListener onClickAway={()=>setmenuState(false)}>
+                    <Popper open={menuState} placement='bottom-start' anchorEl={document.querySelector('img.MuiAvatar-img')} className='profile-menu'>
+                        <MenuList>
+                            <MenuItem onClick={()=>setView('profile-page')}>
+                                Profile
+                            </MenuItem>
+                            <MenuItem>
+                                Logout
+                            </MenuItem>
+                        </MenuList>
+                    </Popper>
+                </ClickAwayListener>
             </span>
         </div>
     </Fade>
     )
 }
 
-export default Navbar;
+export default withRouter(Navbar);

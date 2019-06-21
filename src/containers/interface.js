@@ -5,6 +5,8 @@ import GoalsContainer from './goalscontainer'
 import Main from './main'
 import NetworkContainer from './networkcontainer'
 import NetworkForm from '../components/networkform'
+import Profile from '../components/profile'
+import EditProfileForm from '../components/editprofileform'
 
 import { ViewState } from '../App'
 
@@ -26,6 +28,11 @@ const Interface = () => {
             case 'network-form':
                 return <Route component={NetworkForm} />
             break;
+            case 'edit-profile':
+                return <Route component={EditProfileForm} />
+            break;
+            case 'profile-page':
+                return <Route component={Profile} />
             default:
                 return <Route component={Main} />
         }

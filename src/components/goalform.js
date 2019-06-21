@@ -7,15 +7,15 @@ import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
 import { DateTimePicker } from '@material-ui/pickers';
 
-
+import { ViewState } from '../App'
 import { AuthUser } from '../App'
-
 
 const GoalForm = () => {
 
     const [goal, setGoal] = useState({repeatable: false, num: '1', interval: '1'})
     const [goaldate, setGoaldate] = useState(new Date())
     const [user, setUser] = useContext(AuthUser)
+    const [view, setView] = useContext(ViewState)
 
     const handleOnSubmit = (e) => {
 
@@ -40,7 +40,7 @@ const GoalForm = () => {
                 }
             })
         })
-        .then(res=>res.json())
+        .then(()=>setView('goals-container'))
     }
 
     const handleOnChange = (e) => {
@@ -110,7 +110,7 @@ const GoalForm = () => {
         <label>Description</label> <br />
         <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='description' className='textarea'/> <br />
             <label>Due Date?</label><br />
-            <DateTimePicker id='end_date' format='LLL' value={goal.end_date} name='end_date' onChange={(e)=>setGoaldate(e._d)}/> <br />
+            <DateTimePicker id='end_date' format='LLL' value={goaldate} name='end_date' onChange={(e)=>setGoaldate(e._d)}/> <br />
         <FormControl>
             <InputLabel htmlFor='repeat'>Repeat?</InputLabel>
             <Select id='repeat' name="repeatable" value={goal.repeatable} onChange={handleOnChange}>

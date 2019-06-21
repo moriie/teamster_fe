@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthUser } from '../App'
 import sr from '../scrollreveal'
@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button'
 
 const Splash = (props) => {
 
+    const [user, setUser] = useContext(AuthUser)
 
     useEffect(()=>{
         for (let n = 0; n < 8; n++){
@@ -16,8 +17,6 @@ const Splash = (props) => {
 
         sr.reveal('button', {delay: 2500, duration: 3000})
     }, [])
-
-    const [user, setUser] = useContext(AuthUser)
 
     const createTitle = () => {
         let title = ['T', 'e', 'a', 'm', 's', 't', 'e', 'r']

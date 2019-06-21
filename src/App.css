@@ -85,6 +85,15 @@ body {
   margin-right: 0;
 }
 
+#interface .goals-container .MuiTypography-root{
+  font-size: 100%;
+  color: whitesmoke;
+}
+
+#interface .goals-container .MuiListItem-root{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.507);
+}
+
 a {
   color: rgb(166, 230, 255);
   text-decoration: none;
@@ -292,16 +301,6 @@ div#root div.MuiDrawer-paperAnchorLeft{
   margin-right: 25%;
 }
 
-#interface .MuiListItem-root:first-child {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
-#interface .MuiListItem-root:last-child {
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-
 #interface .MuiListItem-root {
   height: 100px;
   background-color: hsla(213, 20%, 36%, 0.5);
@@ -383,7 +382,7 @@ div.profile-menu{
 }
 
 #interface div.MuiPaper-root:hover div.MuiCardActions-root button{
-  animation: reveal-option .75s ease-in-out forwards;
+  animation: reveal-option .5s ease-in-out forwards;
 }
 
 @keyframes reveal-option { from {margin-top: 10%} to {margin-top: -5.5%;}}

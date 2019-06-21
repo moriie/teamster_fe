@@ -7,6 +7,7 @@ import Home from './components/home'
 import Splash from './components/splash'
 import Unauthorized from './components/unauthorized'
 import AuthRoute from './components/authroutes'
+import Profile from './components/profile'
 
 export const Routes = () => {
     return (
