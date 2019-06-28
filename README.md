@@ -1,13 +1,11 @@
-### TEAMSTER
+# TEAMSTER
 
 
-##############################################################################
-
-### FRONT-END (JAVASCRIPT)
+## FRONT-END (JAVASCRIPT)
 
 Using React / React Router
 
-# Packages/etc
+### Packages/etc
 
 - Scrollreveal
 - Material-UI Core + Icons
@@ -16,27 +14,23 @@ Using React / React Router
 - UUID (For convenient creation of keys)
 
 
-##############################################################################
-
-### BACK-END (RUBY)
+## BACK-END (RUBY)
 
 Using Rails
 Using PostgreSQL
 
-# Packages/etc
+### Packages/etc
 
 - BCrypt (JWT Authentication)
 
 
-##############################################################################
+# Plans/Future Features
 
-### Plans/Future Features
-
-# Front End
+## Front End
 
 TBD
 
-# Back End
+## Back End
 
 - Switch from JWT Authentication to OAuth2.0 
 
