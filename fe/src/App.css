@@ -6,44 +6,40 @@ body {
   overflow: hidden;
 }
 
-.app{
+div.App{
   width: 100vw;
   height: 100vh;
 }
 
+#navbar{
+  position: relative;
+  height: 7.5vh;
+  box-shadow: 0px 8px 4px #333;
+  background-color: rgb(128, 60, 48);
+}
+
 .home{
-  background-image: url('https://argushd.com/wp-content/uploads/2016/03/Abstract-Backgrounds-Website-Background-Blue-Wallpaper-1920x1080.jpg');
-  height: 100vh;
+  background-image: url('./dash_BG.jpg');
+  height: 92.5vh;
   width: 100vw;
   margin-right: 0;
   display: grid;
   color: white;
   grid-template-rows: repeat(10, 10%);
   grid-template-columns: repeat(5, 20%);
-  grid-template-areas:
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
 }
 
 .teamster-logo{
   height: 100%;
-  width: 5%;
+  width: 4%;
   float: left;
 }
 
 .teamster-name{
   position:absolute;
-  height: 3.5%;
-  width: 3.5%;
-  top: 3.25%;
+  height: 40%;
+  width: 2.5%;
+  top: 30%;
   left: .75%;
   pointer-events: none;
 }
@@ -57,23 +53,18 @@ body {
 }
 
 .teamster-logo:hover{
-  -webkit-animation:spin 3s linear infinite;
-  -moz-animation:spin 3s linear infinite;
-  animation:spin 3s linear infinite;
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-#navbar{
-  display: block;
-  box-shadow: 0px 8px 4px #333;
-  background-color: rgb(128, 60, 48);
-}
 
 #interface{
-  grid-area: interface;
+  grid-area: 1/1/span 20/span 10;
   display: grid;
   grid-template-rows: repeat(20, 5%);
   grid-template-columns: repeat(5, 20%);
@@ -136,6 +127,17 @@ div.blur-box {
   position: absolute;
   z-index: 99;
   background-color: hsla(213, 20%, 36%, 0.7);
+}
+
+div.goal-box {
+  display: flex;
+  flex-direction: column;
+  top: 15%;
+  left: 30%;
+  width: 40%;
+  position: absolute;
+  z-index: 99;
+  background-color: hsla(213, 20%, 36%, 1);
 }
 
 .front-page button {
@@ -337,13 +339,19 @@ div.profile-menu{
   border-radius: 5px;
 }
 
+#navbar svg.MuiSvgIcon-root{
+  color: rgb(179, 153, 153);
+  font-size: 48px;
+}
+
 /* ----------------------------- */
 
 /* Interface */
 
 #interface div.MuiPaper-root{
   color: whitesmoke;
-  background-color: rgba(51, 51, 51, 0.144);
+  /* background-color: rgba(51, 51, 51, 0.144); */
+  background-color: rgba(51, 51, 51, 0.188);
   box-shadow: 6px 4px 6px #333;
 }
 
@@ -367,10 +375,13 @@ div.profile-menu{
 }
 
 #interface div.MuiCardActions-root button{
-  margin-top: 10%;
+  margin-bottom: -20%;
   flex: 1 1 0;
 }
 
+div.MuiCardActions-root.MuiCardActions-spacing{
+  margin-top: -2.5%;
+}
 
 #interface span.MuiTypography-root{
   font-size: 450%;
@@ -385,7 +396,7 @@ div.profile-menu{
   animation: reveal-option .5s ease-in-out forwards;
 }
 
-@keyframes reveal-option { from {margin-top: 10%} to {margin-top: -5.5%;}}
+@keyframes reveal-option { from {margin-bottom: -20%} to {margin-bottom: 5%;}}
 
 #interface .MuiTypography-root::selection{
   background-color: transparent;
@@ -398,34 +409,3 @@ div.profile-menu{
   clear: both;
   display: table;
 }
-
-
-
-
-
-    /* "navbar navbar navbar navbar navbar"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"
-    "sidebar interface interface interface interface"; */
-
-
-
-/* .no-sidebar{
-  grid-template-areas:
-  "navbar navbar navbar navbar navbar"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface"
-  "interface interface interface interface interface";
-} */

@@ -34,8 +34,9 @@ const Navbar = (props) => {
                     <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
                 </NavLink>
                 <Tooltip title='Home'>
-                    <IconButton onClick={()=>setView('')}>
-                            <HomeIcon style={{fontSize: 48}} />
+                    <IconButton id='home' onClick={()=>setView('')}>
+                            {/* <HomeIcon style={{fontSize: 48}} /> */}
+                            <HomeIcon />
                     </IconButton>
                 </Tooltip >
                 <Tooltip title='View Calendar'>
@@ -45,21 +46,21 @@ const Navbar = (props) => {
                 </Tooltip>
                 <Tooltip title='View Goals'>
                     <IconButton onClick={()=>setView('goals-container')}>
-                        <ListIcon style={{fontSize: 48}} />
+                        <ListIcon />
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='Your Network'>
                     <IconButton>
-                        <NetworkIcon style={{fontSize: 48}} />
+                        <NetworkIcon />
                     </IconButton>
                 </Tooltip>
                     <Tooltip title='Your Partners'>
                     <IconButton>
-                        <FriendIcon style={{fontSize: 48}} />
+                        <FriendIcon />
                     </IconButton>
                 </Tooltip>
-                <IconButton style={{float: 'right', padding: 0, margin: '.5% .5%', width: '64px', height: '64px'}} onClick={()=>setmenuState(!menuState)}>
-                    <Avatar src={user.avatar} alt='user-profile-pic' className='profile-btn'/>
+                <IconButton className='profile-btn' style={{float: 'right', padding: 0, margin: '.5% .5%', width: '64px', height: '64px'}} onClick={()=>setmenuState(!menuState)}>
+                    <Avatar src={user.avatar} alt='user-profile-pic'/>
                 </IconButton>
                 <ClickAwayListener onClickAway={()=>setmenuState(false)}>
                     <Popper open={menuState} placement='bottom-start' anchorEl={document.querySelector('img.MuiAvatar-img')} className='profile-menu'>

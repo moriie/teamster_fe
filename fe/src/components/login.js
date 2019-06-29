@@ -58,7 +58,7 @@ const Login = (props) => {
     }
 
     return <div className='splash' onClick={handleOnClick}>
-        <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
+        <img src='./bgr.png' className='bg' alt=''/>
         <Fade in={true} timeout={2000}>
             <div className='blur-box' {...props}>
                 <h1>Login</h1><br />

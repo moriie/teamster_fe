@@ -29,7 +29,7 @@ const Splash = (props) => {
     //set div 'front-page' to instead switch to showing buttons, login form, signup form
     
     return <div className='splash'>
-        <img src='http://hashtag-bg.com/wp-content/uploads/2018/08/berlin-background-resume-wallpapers-backgrounds.jpg' className='bg' alt=''/>
+        <img src='./bgr.png' className='bg' alt=''/>
         <div className='front-page'>
             <h1 className='app-name'>{createTitle()}</h1>
             < Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link><br />

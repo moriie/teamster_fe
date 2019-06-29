@@ -13,7 +13,7 @@ import { ViewState } from '../App'
 const Interface = () => {
 
     const [view, setView] = useContext(ViewState)
-
+ 
     const handleView = () => {
         switch (view) {
             case 'goals-container':
