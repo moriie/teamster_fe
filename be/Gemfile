@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+# git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
@@ -49,3 +49,5 @@ gem "jwt", "~> 2.2"
 gem "active_model_serializers", "~> 0.10.9"
 
 gem 'pry'
+
+gem 'bundler', '~> 2.0.2'

@@ -14,8 +14,8 @@ const Splash = (props) => {
         for (let n = 0; n < 8; n++){
             sr.reveal(`span.app-name${n}`, {delay: 250*n, duration: 2000})
         }
-
-        sr.reveal('button', {delay: 2500, duration: 3000})
+        
+        sr.reveal('button', {delay: 3000, duration: 3000})
     }, [])
 
     const createTitle = () => {
@@ -32,6 +32,18 @@ const Splash = (props) => {
         <img src='./bgr.png' className='bg' alt=''/>
         <div className='front-page'>
             <h1 className='app-name'>{createTitle()}</h1>
+            <p id='m-1'>
+                <div>Create</div>
+                <div><span>New Relationships</span></div>
+            </p><br />
+            <p id='m-2'>
+                <div>Gain</div>
+                <div><span>New Skills</span></div>
+            </p><br />
+            <p id='m-3'>
+                <div>Exceed</div>
+                <div><span>Your Expectations</span></div>
+            </p><br />
             < Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link><br />
             < Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link>
         </div>

@@ -13,7 +13,7 @@ div.App{
 
 #navbar{
   position: relative;
-  height: 7.5vh;
+  height: 8vh;
   box-shadow: 0px 8px 4px #333;
   background-color: rgb(128, 60, 48);
 }
@@ -58,10 +58,107 @@ div.App{
   animation:spin 2s linear infinite;
 }
 
+.front-page div{
+  font-size: 200%;
+}
+
+.front-page p{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#m-1 div{
+  display: table-cell;
+}
+
+#m-1 div:first-of-type{
+  animation: sub-reveal 7s 3s 1 both;
+}
+
+#m-1 div:last-of-type{
+  width: 0;
+  animation: full-reveal 7s 3s 1 both;
+}
+
+#m-1 div:last-of-type span{
+  /* margin-left: -275px; */
+  animation: left-swoop 7s 3s 1 both;
+}
+
+#m-2 div{
+  display: table-cell;
+}
+
+#m-2 div:first-of-type{
+  animation: sub-reveal 7s 4s 1 both;
+}
+
+#m-2 div:last-of-type{
+  width: 0;
+  animation: full-reveal-2 7s 4s 1 both;
+}
+
+#m-2 div:last-of-type span{
+  margin-left: -275px;
+  animation: left-swoop 7s 4s 1 both;
+}
+
+#m-3 div{
+  display: table-cell;
+}
+
+#m-3 div:first-of-type{
+  animation: sub-reveal 7s 5s 1 both;
+}
+
+#m-3 div:last-of-type{
+  width: 0;
+  animation: full-reveal-3 7s 5s 1 both;
+}
+
+#m-3 div:last-of-type span{
+  margin-left: -275px;
+  animation: left-swoop 7s 5s 1 both;
+}
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+@keyframes sub-reveal {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+@keyframes left-swoop {
+  0% {margin-left: -625px;}
+  20% {margin-left: -625px;}
+  35% {margin-left: 0;}
+  100% {margin-left: 0;}
+}
+
+@keyframes full-reveal {
+  0% {opacity: 0; width: 0;}
+  20% {opacity: 1; width: 0;}
+  30% {width: 275px}
+  100% {opacity: 1; width: 275px;}
+}
+
+@keyframes full-reveal-2 {
+  0% {opacity: 0; width: 0;}
+  20% {opacity: 1; width: 0;}
+  30% {width: 155px}
+  100% {opacity: 1; width: 155px;}
+}
+
+@keyframes full-reveal-3 {
+  0% {opacity: 0; width: 0;}
+  20% {opacity: 1; width: 0;}
+  30% {width: 265px}
+  100% {opacity: 1; width: 265px;}
+}
 
 #interface{
   grid-area: 1/1/span 20/span 10;
@@ -108,14 +205,12 @@ a {
 }
 
 div.front-page {
-  top: 15%;
+  top: 7.5%;
   left: 30%;
   height: 40%;
   width: 40%;
   position: absolute;
   z-index: 98;
-  visibility: hidden;
-
 }
 
 div.blur-box {
@@ -149,6 +244,7 @@ div.goal-box {
 
 h1.app-name {
   margin-top: 0;
+  margin-bottom: 5%;
   display: block;
   position: relative;
   z-index: 99;

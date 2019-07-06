@@ -1,7 +1,8 @@
 # TEAMSTER
 
 
-## FRONT-END (JAVASCRIPT)
+
+# FRONT-END (JAVASCRIPT)
 
 Using React / React Router
 
@@ -14,7 +15,8 @@ Using React / React Router
 - UUID (For convenient creation of keys)
 
 
-## BACK-END (RUBY)
+
+# BACK-END (RUBY)
 
 Using Rails
 Using PostgreSQL
@@ -24,13 +26,14 @@ Using PostgreSQL
 - BCrypt (JWT Authentication)
 
 
+
 # Plans/Future Features
 
-## Front End
+### Front End
 
 TBD
 
-## Back End
+### Back End
 
 - Switch from JWT Authentication to OAuth2.0 
 
