@@ -7,8 +7,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
 import { DateTimePicker } from '@material-ui/pickers';
 
-import { ViewState } from '../App'
-import { AuthUser } from '../App'
+import { ViewState, AuthUser, fetchURL } from '../App'
 
 const GoalForm = () => {
 
@@ -23,7 +22,7 @@ const GoalForm = () => {
         
         let time_basis = parseInt(goal.num) * parseInt(goal.interval)
 
-        fetch('http://localhost:3000/goals', {
+        fetch(`${fetchURL}/goals`, {
             method: 'post',
             headers: {
                 "Authorization": document.cookie,

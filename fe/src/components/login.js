@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { AuthUser } from '../App'
+import { AuthUser, fetchURL } from '../App'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
@@ -29,7 +29,7 @@ const Login = (props) => {
     const handleOnSubmit = (e) => {
         e.preventDefault()
 
-        fetch('http://localhost:3000/login', {
+        fetch(`${fetchURL}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

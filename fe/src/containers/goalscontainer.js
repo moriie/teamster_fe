@@ -5,8 +5,7 @@ import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import sr from '../scrollreveal'
 
-import { AuthUser } from '../App'
-import { ViewState } from '../App'
+import { AuthUser, ViewState, fetchURL } from '../App'
 
 
 const GoalsContainer = () => {
@@ -18,7 +17,7 @@ const GoalsContainer = () => {
     sr.reveal('ul.goals-container', {duration: 1500})
 
     useEffect(()=>{
-        fetch('http://localhost:3000/goals')
+        fetch(`${fetchURL}/goals`)
         .then(resp=>resp.json())
         .then((json)=>{
             let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
