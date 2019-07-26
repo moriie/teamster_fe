@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Modal from '@material-ui/core/Modal'
+import Button from '@material-ui/core/Button'
 
 const GoalCard = (props) => {
 
@@ -47,6 +48,8 @@ const GoalCard = (props) => {
             <p>Due: {`${props.goal.end_date.match(/\S+(?=T)/)} at ${props.goal.end_date.match(/\d{2}:{1}\d{2}/)}`}</p>
             {handleRepeat()}
             {handlePartner()}  
+            <Button variant='contained' size='large' color='primary' onClick={null}>Edit Goal</Button>
+            <Button variant='contained' size='large' color='primary' onClick={null}>Delete Goal</Button>
         </div>
         </Modal>
     </div>

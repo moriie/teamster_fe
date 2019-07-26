@@ -60,7 +60,7 @@ const Main = () => {
                 </CardActions>
         </Card>
         <Card style={{gridArea: '10/2/span 4/span 3'}}>
-            <CardActionArea>
+            <CardActionArea onClick={()=>setView('calendar')}>
                     <CardHeader title={'Calendar'} style={{marginTop: '3.25%', paddingBottom: '10%'}}>
                     </CardHeader>
             </CardActionArea>

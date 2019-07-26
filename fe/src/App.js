@@ -7,7 +7,8 @@ import './App.css';
 
 export const AuthUser = createContext([{}, ()=>{}])
 export const ViewState = createContext([{}, ()=>{}])
-export const fetchURL = 'https://teamsterbe-env.hnmf4266v7.us-east-1.elasticbeanstalk.com';
+// export const fetchURL = 'http://teamsterbe-env.hnmf4266v7.us-east-1.elasticbeanstalk.com';
+export const fetchURL = 'http://localhost:3000'
 
 export function App() {
 

@@ -106,7 +106,7 @@ const GoalForm = () => {
 
     //TODO: Ask user if they would like to add or search for a partner at this time or not.
     return <div id='goalform' style={{gridArea: '1/3/span 10/span 1'}}>
-        <h1>Goalform</h1>
+        <h1>Create New Goal</h1>
         <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
         <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='description' className='textarea'/> <br />

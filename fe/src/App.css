@@ -222,9 +222,11 @@ div.blur-box {
   position: absolute;
   z-index: 99;
   background-color: hsla(213, 20%, 36%, 0.7);
+  padding-bottom: 2.5%;
 }
 
 div.goal-box {
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
   top: 15%;

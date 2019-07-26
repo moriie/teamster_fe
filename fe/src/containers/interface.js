@@ -7,6 +7,7 @@ import NetworkContainer from './networkcontainer'
 import NetworkForm from '../components/networkform'
 import Profile from '../components/profile'
 import EditProfileForm from '../components/editprofileform'
+import Calendar from '../components/calendar'
 
 import { ViewState } from '../App'
 
@@ -16,6 +17,9 @@ const Interface = () => {
  
     const handleView = () => {
         switch (view) {
+            case 'calendar':
+                return <Route component={Calendar} />
+            break;
             case 'goals-container':
                 return <Route component={GoalsContainer} />
             break;
