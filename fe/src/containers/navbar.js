@@ -34,28 +34,27 @@ const Navbar = (props) => {
                     <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
                 </NavLink>
                 <Tooltip title='Home'>
-                    <IconButton id='home' onClick={()=>setView('')}>
-                            {/* <HomeIcon style={{fontSize: 48}} /> */}
+                    <IconButton className='nav-btn' onClick={()=>setView('')}>
                             <HomeIcon />
                     </IconButton>
                 </Tooltip >
                 <Tooltip title='View Calendar'>
-                    <IconButton>
-                        <CalendarIcon style={{fontSize: 48}} />
+                    <IconButton className='nav-btn' onClick={()=>setView('calendar')}>
+                        <CalendarIcon />
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='View Goals'>
-                    <IconButton onClick={()=>setView('goals-container')}>
+                    <IconButton className='nav-btn' onClick={()=>setView('goals-container')}>
                         <ListIcon />
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='Your Network'>
-                    <IconButton>
+                    <IconButton className='nav-btn'>
                         <NetworkIcon />
                     </IconButton>
                 </Tooltip>
                     <Tooltip title='Your Partners'>
-                    <IconButton>
+                    <IconButton className='nav-btn'>
                         <FriendIcon />
                     </IconButton>
                 </Tooltip>
