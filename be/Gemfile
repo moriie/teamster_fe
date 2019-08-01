@@ -48,6 +48,3 @@ gem "jwt", "~> 2.2"
 
 gem "active_model_serializers", "~> 0.10.9"
 
-gem 'pry'
-
-gem 'bundler', '~> 2.0.2'

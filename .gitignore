@@ -1,5 +1,55 @@
+## BACKEND
 
 # Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
+/be/.ebextensions/*
+/be/.elasticbeanstalk/*
+/be/.ebignore
+/be/.gitignore
+
+# Ignore bundler config.
+/be/.bundle
+
+# Ignore all logfiles and tempfiles.
+/be/log/*
+/be/tmp/*
+/be/!/log/.keep
+/be/!/tmp/.keep
+
+# Ignore uploaded files in development
+/be/storage/*
+/be!/storage/.keep
+
+/be.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/be/config/master.key
+
+# Ignore batch file
+
+/be/teamster_be.zip
+
+## FRONTEND
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/fe/node_modules
+/fe/.pnp
+/fe.pnp.js
+
+# testing
+/fe/coverage
+
+# production
+/fe/build
+
+# misc
+/fe/.DS_Store
+/fe/.env.local
+/fe/.env.development.local
+/fe/.env.test.local
+/fe/.env.production.local
+
+/fe/npm-debug.log*
+
+/fe/.gitignore
