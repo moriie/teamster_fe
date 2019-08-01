@@ -1,5 +1,9 @@
 # TEAMSTER
 
+Welcome to Teamster, my current playground to learn about and test React Hooks, improve my CSS, and practice general framework/package inclusion.
+You can check out the code in action at https://teamster.jayewe.com!
+
+It's not the best looking, but that's not the point :) 
 
 
 # FRONT-END (JAVASCRIPT)
@@ -31,10 +35,13 @@ Using PostgreSQL
 
 ### Front End
 
-TBD
+- Fully remove Scrollreveal - transition to Material-UI Fade. 
+- Make the app native / compatible with mobile. 
+- Fix state updating and remove flashing.
 
 ### Back End
 
 - Switch from JWT Authentication to OAuth2.0 
+- Add validations (not necessary at the moment)
 
 
