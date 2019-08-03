@@ -4,6 +4,7 @@ body {
   height: 100vh;
   text-align: center;
   overflow: hidden;
+  color: whitesmoke;
 }
 
 div.App{
@@ -20,7 +21,7 @@ div.App{
 
 .home{
   background-image: url('./dash_BG.jpg');
-  height: 92.5vh;
+  height: 100vh;
   width: 100vw;
   margin-right: 0;
   display: grid;
@@ -58,8 +59,21 @@ div.App{
   animation:spin 2s linear infinite;
 }
 
+.error{
+  display: block;
+  margin: 15vw auto auto auto;
+  color: whitesmoke;
+  width: 50vw;
+  font-size: 1.5vw;
+  background-color: hsla(213, 30%, 56%, 0.8);
+}
+
+.unAuthorized{
+  color: black;
+}
+
 .front-page div{
-  font-size: 200%;
+  font-size: 1.67vw;
 }
 
 .front-page p{
@@ -78,11 +92,10 @@ div.App{
 
 #m-1 div:last-of-type{
   width: 0;
-  animation: full-reveal 7s 3s 1 both;
+  animation: full-reveal 8s 3s 1 both;
 }
 
 #m-1 div:last-of-type span{
-  /* margin-left: -275px; */
   animation: left-swoop 7s 3s 1 both;
 }
 
@@ -96,11 +109,11 @@ div.App{
 
 #m-2 div:last-of-type{
   width: 0;
-  animation: full-reveal-2 7s 4s 1 both;
+  animation: full-reveal-2 9s 4s 1 both;
 }
 
 #m-2 div:last-of-type span{
-  margin-left: -275px;
+  margin-left: -25vw;
   animation: left-swoop 7s 4s 1 both;
 }
 
@@ -114,11 +127,11 @@ div.App{
 
 #m-3 div:last-of-type{
   width: 0;
-  animation: full-reveal-3 7s 5s 1 both;
+  animation: full-reveal-3 9s 5s 1 both;
 }
 
 #m-3 div:last-of-type span{
-  margin-left: -275px;
+  margin-left: -25vw;
   animation: left-swoop 7s 5s 1 both;
 }
 
@@ -133,8 +146,8 @@ div.App{
 }
 
 @keyframes left-swoop {
-  0% {margin-left: -625px;}
-  20% {margin-left: -625px;}
+  0% {margin-left: -67vw;}
+  20% {margin-left: -67vw;}
   35% {margin-left: 0;}
   100% {margin-left: 0;}
 }
@@ -142,22 +155,22 @@ div.App{
 @keyframes full-reveal {
   0% {opacity: 0; width: 0;}
   20% {opacity: 1; width: 0;}
-  30% {width: 275px}
-  100% {opacity: 1; width: 275px;}
+  30% {width: 15vw}
+  100% {opacity: 1; width: 15vw;}
 }
 
 @keyframes full-reveal-2 {
   0% {opacity: 0; width: 0;}
   20% {opacity: 1; width: 0;}
-  30% {width: 155px}
-  100% {opacity: 1; width: 155px;}
+  30% {width: 8.5vw}
+  100% {opacity: 1; width: 8.5vw;}
 }
 
 @keyframes full-reveal-3 {
   0% {opacity: 0; width: 0;}
   20% {opacity: 1; width: 0;}
-  30% {width: 265px}
-  100% {opacity: 1; width: 265px;}
+  30% {width: 14vw}
+  100% {opacity: 1; width: 14vw;}
 }
 
 #interface{
@@ -176,7 +189,7 @@ div.App{
 }
 
 #interface .goals-container .MuiTypography-root{
-  font-size: 100%;
+  font-size: 1vw;
   color: whitesmoke;
 }
 
@@ -189,17 +202,9 @@ a {
   text-decoration: none;
 }
 
-.splash {
-  max-height: 100%;
-  max-width: 100%;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
 .bg {
-  max-height: 100%;
-  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   user-select: none;
   -moz-user-select: none;
@@ -231,9 +236,9 @@ div.goal-box {
   color: whitesmoke;
   display: flex;
   flex-direction: column;
-  top: 15%;
-  left: 30%;
-  width: 40%;
+  top: 15vh;
+  left: 30vw;
+  width: 40vw;
   position: absolute;
   z-index: 99;
   background-color: hsla(213, 20%, 36%, 1);
@@ -242,7 +247,7 @@ div.goal-box {
 .front-page button {
   height: 30%;
   width: 45%;  
-  font-size: 200%;
+  font-size: 2vw;
   margin-top: 2%;
 }
 
@@ -252,7 +257,7 @@ h1.app-name {
   display: block;
   position: relative;
   z-index: 99;
-  font-size: 800%;
+  font-size: 8vw;
   text-shadow: 6px 8px 4px #333;
   pointer-events: none;
   user-select: none;
@@ -305,9 +310,7 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 /* Interface */
 
 #interface .MuiPaper-root{
-  width: 100%;
-  /* margin-left: 25%; */
-  margin-top: 1%;
+  margin-top: 1vh;
 }
 
 /*-------------------------------*/
@@ -315,8 +318,8 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 /* Goal Container */
 
 .goals-container button.create-goal{
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 /*-------------------------------*/
 
@@ -390,21 +393,20 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
 
 /* Goals List  */
 div#root div.MuiDrawer-paperAnchorLeft{
-  width: 50%;
-  left: 25%;
+  width: 50vw;
+  left: 25vw;
 }
 
 #interface .MuiList-root{
   overflow: auto;
-  max-height: 100%;
-  margin-top: 1%;
-  font-size: 24px;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-top: 1vh;
+  font-size: 1.5vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 
 #interface .MuiListItem-root {
-  height: 100px;
+  height: 10vh;
   background-color: hsla(213, 20%, 36%, 0.5);
 }
 
@@ -417,19 +419,19 @@ div#root div.MuiDrawer-paperAnchorLeft{
 /* Navbar */
 
 #navbar a.active button {
-  margin-top: .5%;
+  margin-top: .5vh;
   float: left;
   color: whitesmoke;
 }
 
 #navbar .MuiAvatar-root{
-  width: 100%;
-  height: 100%;
+  width: 3.5vw;
+  height: 7vh;
 }
 
 div.MuiTooltip-popper .MuiTooltip-tooltip{
   margin-top: 0;
-  font-size: 75%;
+  font-size: 1vw;
 }
 
 div.profile-menu{
@@ -441,7 +443,7 @@ div.profile-menu{
 
 #navbar svg.MuiSvgIcon-root{
   color: rgb(179, 153, 153);
-  font-size: 48px;
+  font-size: 3.25vw;
 }
 
 /* ----------------------------- */
@@ -460,13 +462,13 @@ div.profile-menu{
 }
 
 #interface div.MuiCardHeader-root{
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
 #interface div.MuiCardHeader-root.main-header{
-  padding-top: 0%;
-  font-size: 30%;
+  padding-top: 0;
+  /* font-size: .3vw; */
 }
 
 #interface div.MuiCardActions-root{
@@ -475,16 +477,16 @@ div.profile-menu{
 }
 
 #interface div.MuiCardActions-root button{
-  margin-bottom: -20%;
+  margin-bottom: -100vh;
   flex: 1 1 0;
 }
 
 div.MuiCardActions-root.MuiCardActions-spacing{
-  margin-top: -2.5%;
+  margin-top: -2.5vh;
 }
 
 #interface span.MuiTypography-root{
-  font-size: 450%;
+  font-size: 3.5vw;
   pointer-events: none;
 }
 
@@ -496,7 +498,7 @@ div.MuiCardActions-root.MuiCardActions-spacing{
   animation: reveal-option .5s ease-in-out forwards;
 }
 
-@keyframes reveal-option { from {margin-bottom: -20%} to {margin-bottom: 5%;}}
+@keyframes reveal-option { from {margin-bottom: -100vh} to {margin-bottom: 0vh;}}
 
 #interface .MuiTypography-root::selection{
   background-color: transparent;
@@ -507,15 +509,22 @@ div.MuiCardActions-root.MuiCardActions-spacing{
   grid-area: 1/1/20/10;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 20% 5% repeat(15%, 5);
-  grid-template-columns: repeat(7, auto);
+  grid-template-rows: 7.5vh 3vh repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   background-color: hsla(213, 20%, 36%, 0.7);
+  font-size: 2vw;
 }
 
 .m-title{
   grid-area: 1/1/1/8;
-  font-size: 300%;
+  font-size: 2.5vw;
   color: whitesmoke;
+}
+
+@media screen and (min-width: 500px){
+  .cal-n{
+    font-size: 50%;
+  }
 }
 
 .cal-n:first-of-type{

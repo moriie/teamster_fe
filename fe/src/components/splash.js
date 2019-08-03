@@ -1,27 +1,16 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { AuthUser } from '../App'
-import sr from '../scrollreveal'
 import Button from '@material-ui/core/Button'
+import Fade from '@material-ui/core/Fade'
+import uuid from 'uuid/v4'
 
 
-
-const Splash = (props) => {
-
-    const [user, setUser] = useContext(AuthUser)
-
-    useEffect(()=>{
-        for (let n = 0; n < 8; n++){
-            sr.reveal(`span.app-name${n}`, {delay: 250*n, duration: 2000})
-        }
-        
-        sr.reveal('button', {delay: 3000, duration: 3000})
-    }, [])
+const Splash = () => {
 
     const createTitle = () => {
         let title = ['T', 'e', 'a', 'm', 's', 't', 'e', 'r']
         return title.map((letter, index) => {
-            return <span className={`app-name${index}`}>{letter}</span>
+            return <Fade in={true} key={`${index}-${uuid()}`} timeout={{enter: 2000}} style={{transitionDelay: `${250*index}ms`}}><span>{letter}</span></Fade>
         })
     }
 
@@ -44,8 +33,8 @@ const Splash = (props) => {
                 <div>Exceed</div>
                 <div><span>Your Expectations</span></div>
             </p><br />
-            < Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link><br />
-            < Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link>
+            <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: `3000ms`}}>< Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link></Fade><br />
+            <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: `3000ms`}}>< Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link></Fade>
         </div>
     </div>
 }

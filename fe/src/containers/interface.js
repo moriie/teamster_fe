@@ -42,10 +42,11 @@ const Interface = () => {
         }
     }
 
-    return <div id='interface'>
-        {handleView()}
+    return <div className='home'>
+        <div id='interface'>
+            {handleView()}
+        </div>
     </div>
-
 }
 
 export default withRouter(Interface)

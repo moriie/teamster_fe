@@ -13,8 +13,6 @@ const Login = (props) => {
 
     const [user, setUser] = useContext(AuthUser)
 
-    const {staticContext, ...newProps} = props; //Removing staticContext from props to remove warning.
-
     const textStyles = {
         margin: 'normal',
         variant: 'outlined',

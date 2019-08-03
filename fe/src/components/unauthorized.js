@@ -6,7 +6,7 @@ const Unauthorized = (props) => {
         setTimeout(()=>{props.history.push('/login')}, 2500)
     }
     
-    return <div>
+    return <div className='unauthorized'>
         <h1>Error: please login to your account to view this page.</h1>
         <p>Redirecting...</p>
         {redirect()}
