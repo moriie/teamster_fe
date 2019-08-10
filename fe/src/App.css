@@ -68,18 +68,20 @@ div.App{
   background-color: hsla(213, 30%, 56%, 0.8);
 }
 
-.unAuthorized{
+.unauthorized{
   color: black;
 }
 
-.front-page div{
+.subtitle{
   font-size: 1.67vw;
-}
-
-.front-page p{
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.front-page *::selection{
+  background-color: transparent;
 }
 
 #m-1 div{

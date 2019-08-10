@@ -9,8 +9,7 @@ import './App.css';
 
 export const AuthUser = createContext([{}, ()=>{}])
 export const ViewState = createContext([{}, ()=>{}])
-// export const fetchURL = 'https://teamster-be.jayewe.com';
-export const fetchURL = 'http://localhost:3000'
+export const fetchURL = 'https://teamster-be.herokuapp.com'
 
 export function App() {
 
@@ -19,14 +18,15 @@ export function App() {
   const [modal, setModal] = useState(false)
 
   useEffect(()=>{
-        fetch(`${fetchURL}/session`, {
-            headers: {
-                "Authorization": document.cookie
-            }
-        })
-        .then(res=>res.json())
-        .then(json=>setUser({...user, ...json}))
-        .catch(()=>setModal(true))
+    localStorage.setItem("visited", 1)
+      fetch(`${fetchURL}/session`, {
+          headers: {
+              "Authorization": document.cookie
+          }
+      })
+      .then(res=>{res.json()})
+      .then(json=>setUser({...user, ...json}))
+      .catch(()=>{setModal(true)})
     }, [])
 
   return (
@@ -38,7 +38,7 @@ export function App() {
           <Modal open={modal} onBackdropClick={()=>setModal(false)}>
             <p className='error'>
               Uh oh! <br />
-              Thanks for checking out Teamster! Unfortunately, it looks like the backend is currently offline. For reference, if it's between 8PM-8AM EST, the backend is always offline at these times (Elastic Beanstalk is expensive!). Otherwise, I'm probably currently playing around with settings and have my instances stopped while doing so. If you'd like to take a look with the backend running, feel free to send me a message <Link target='_blank' href='https://jayewe.com/contact'>here</Link>. 
+              Thanks for checking out Teamster! Unfortunately, it looks like the backend is currently offline. For reference, if it's between 8PM-8AM EST, the backend is always offline at these times (Elastic Beanstalk is expensive!). Otherwise, I'm probably currently playing around with settings and have my backend offline while doing so. If you'd like to take a look with the backend running, feel free to send me a message <Link target='_blank' href='https://jayewe.com/contact'>here</Link>. 
             </p>
           </Modal>
         </div>

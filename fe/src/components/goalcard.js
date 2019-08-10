@@ -3,10 +3,12 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
+import { fetchURL } from '../App.js'
 
 const GoalCard = (props) => {
 
     const [open, setOpen] = useState(false)
+    const [confirm, setConfirm] = useState(false)
 
     const handleRepeat = () => {
         if (props.goal.repeatable){
@@ -37,6 +39,16 @@ const GoalCard = (props) => {
         return null
     }
 
+    const handleConfirm = () => {
+        setConfirm(!confirm)
+    }
+
+    const handleDelete = () => {
+        fetch(`${fetchURL}/goals/${props.goal.id}`, {
+            method: 'DELETE'
+        })
+    }
+
     return <div>
         <ListItem id={props.goal.id} button={true} onClick={()=>setOpen(true)}>
             <ListItemText primary={`Description: ${props.goal.description}`} secondary={`Due: ${props.goal.end_date.match(/\S+(?=T)/)} at ${props.goal.end_date.match(/\d{2}:{1}\d{2}/)}`}>
@@ -49,7 +61,16 @@ const GoalCard = (props) => {
             {handleRepeat()}
             {handlePartner()}  
             <Button variant='contained' size='large' color='primary' onClick={null}>Edit Goal</Button>
-            <Button variant='contained' size='large' color='primary' onClick={null}>Delete Goal</Button>
+            <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>Delete Goal</Button>
+            <Modal open={confirm}>
+                <p>
+                    Are you sure you want to delete this goal?
+                    <span>
+                        <Button variant='contained' size='large' color='primary' onClick={handleDelete}>Yes</Button>
+                        <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>No</Button>
+                    </span>
+                </p>
+            </Modal>
         </div>
         </Modal>
     </div>

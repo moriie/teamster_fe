@@ -69,7 +69,6 @@ const Login = (props) => {
             </div>
         </Fade>
     </div>
-
 }
 
 export default Login 
