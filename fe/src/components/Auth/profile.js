@@ -3,8 +3,8 @@ import Avatar from '@material-ui/core/Avatar'
 import Edit from '@material-ui/icons/Edit'
 import IconButton from '@material-ui/core/IconButton'
 
-import { AuthUser } from '../App'
-import { ViewState } from '../App'
+import { AuthUser } from '../../App'
+import { ViewState } from '../../App'
 
 const Profile = (props) => {
 

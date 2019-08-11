@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
-import { fetchURL } from '../App.js'
+import { fetchURL } from '../../App.js'
 
 const GoalCard = (props) => {
 

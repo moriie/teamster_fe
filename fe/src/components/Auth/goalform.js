@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Button from '@material-ui/core/Button'
 import { DateTimePicker } from '@material-ui/pickers';
 
-import { ViewState, AuthUser, fetchURL } from '../App'
+import { ViewState, AuthUser, fetchURL } from '../../App'
 
 const GoalForm = () => {
 

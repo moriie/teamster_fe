@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { AuthUser } from '../App'
-import Navbar from '../containers/navbar'
+import { AuthUser } from '../../App'
+import Navbar from '../../containers/navbar'
 import Modal from '@material-ui/core/Modal'
 
 const AuthRoutes = (props) => {
@@ -15,7 +15,7 @@ const AuthRoutes = (props) => {
         }
     }, [user])
 
-    if (!!user){
+    if (!!document.cookie){
         return <Fragment>
             <Navbar />
             <Route component={props.component} />

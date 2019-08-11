@@ -19,30 +19,37 @@ div.loading{
   width: 100%;
   height: 100%;
 }
+
 .loading-logo{
   -webkit-animation:spin 2s linear infinite;
   -moz-animation:spin 2s linear infinite;
   animation:spin 2s linear infinite;
 }
 
+div.visited{
+  display: flex;
+  flex-direction: column;
+  margin: 15vw auto auto auto;
+  color: whitesmoke;
+  width: 50vw;
+  font-size: 1.5vw;
+  background-color: hsla(213, 30%, 56%, 0.8);
+}
+
+.visited .MuiAvatar-root{
+  align-self: center;
+  margin-top: 1.5vh;
+  width: 5vw;
+  height: 5vw;
+}
+
 #navbar{
   position: relative;
-  height: 8vh;
   box-shadow: 0px 8px 4px #333;
   background-color: rgb(128, 60, 48);
 }
 
-.home{
-  background-size: cover;
-  background-image: url('./dash_BG.jpg');
-  height: 100vh;
-  width: 100vw;
-  margin-right: 0;
-  display: grid;
-  color: white;
-  grid-template-rows: repeat(10, 10%);
-  grid-template-columns: repeat(5, 20%);
-}
+
 
 .teamster-logo{
   height: 100%;
@@ -74,6 +81,7 @@ div.loading{
 }
 
 .error{
+  border-radius: 10px;
   display: block;
   margin: 15vw auto auto auto;
   color: whitesmoke;
@@ -189,10 +197,20 @@ div.loading{
   100% {opacity: 1; width: 14vw;}
 }
 
+.home{
+  background-size: cover;
+  background-image: url('./dash_BG.jpg');
+  height: 96vh;
+  width: 100vw;
+  margin-right: 0;
+  display: grid;
+  color: white;
+  grid-template-rows: repeat(10, 10%);
+  grid-template-columns: repeat(5, 20%);
+}
+
 #interface{
-  height: 100%;
-  width: 100%;
-  grid-area: 1/1/span 20/span 10;
+  grid-area: 1/1/20/10;
   display: grid;
   grid-template-rows: repeat(20, 5%);
   grid-template-columns: repeat(5, 20%);
@@ -468,7 +486,6 @@ div.profile-menu{
 
 #interface div.MuiPaper-root{
   color: whitesmoke;
-  /* background-color: rgba(51, 51, 51, 0.144); */
   background-color: rgba(51, 51, 51, 0.188);
   box-shadow: 6px 4px 6px #333;
 }
@@ -478,13 +495,8 @@ div.profile-menu{
 }
 
 #interface div.MuiCardHeader-root{
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-}
-
-#interface div.MuiCardHeader-root.main-header{
-  padding-top: 0;
-  /* font-size: .3vw; */
+  padding-top: 0vh;
+  padding-bottom: 0vh;
 }
 
 #interface div.MuiCardActions-root{
@@ -493,12 +505,8 @@ div.profile-menu{
 }
 
 #interface div.MuiCardActions-root button{
-  margin-bottom: -100vh;
+  margin-bottom: -100%;
   flex: 1 1 0;
-}
-
-div.MuiCardActions-root.MuiCardActions-spacing{
-  margin-top: -2.5vh;
 }
 
 #interface span.MuiTypography-root{
@@ -514,7 +522,7 @@ div.MuiCardActions-root.MuiCardActions-spacing{
   animation: reveal-option .5s ease-in-out forwards;
 }
 
-@keyframes reveal-option { from {margin-bottom: -100vh} to {margin-bottom: 0vh;}}
+@keyframes reveal-option { from {margin-bottom: -100%} to {margin-bottom: 0%;}}
 
 #interface .MuiTypography-root::selection{
   background-color: transparent;
@@ -525,7 +533,7 @@ div.MuiCardActions-root.MuiCardActions-spacing{
   grid-area: 1/1/20/10;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: 7.5vh 3vh repeat(5, 1fr);
+  grid-template-rows: 7.5% 3% repeat(5, 1fr);
   grid-template-columns: repeat(7, 1fr);
   background-color: hsla(213, 20%, 36%, 0.7);
   font-size: 2vw;
@@ -569,8 +577,8 @@ div.MuiCardActions-root.MuiCardActions-spacing{
 
 /* ----------------------- */
 
-.clearfix{
+/* .clearfix{
   content: "";
   clear: both;
   display: table;
-}
+} */

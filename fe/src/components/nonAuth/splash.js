@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import Fade from '@material-ui/core/Fade'
 import uuid from 'uuid/v4'
+import CheckUser from './checkUser'
 
 
-const Splash = () => {
+const Splash = (props) => {
 
     const createTitle = () => {
             let title = ['T', 'e', 'a', 'm', 's', 't', 'e', 'r']
@@ -18,9 +19,6 @@ const Splash = () => {
     const visited1 = () => {
         return localStorage.getItem("visited") == 1 ? '0ms' : '3000ms'
     }
-
-    //add state to show "is this not you?"
-    //set div 'front-page' to instead switch to showing buttons, login form, signup form
     
     return <div className='splash'>
         <img src='./bgr.png' className='bg' alt=''/>
@@ -40,6 +38,7 @@ const Splash = () => {
             </div><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link></Fade><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link></Fade>
+            < CheckUser history={props.history} />
         </div>
     </div>
 }

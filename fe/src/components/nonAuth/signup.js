@@ -1,15 +1,17 @@
 import React, { useState, useContext } from 'react'
-import { AuthUser, fetchURL } from '../App'
+import { AuthUser, fetchURL } from '../../App'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-
+import Snackbar from '@material-ui/core/Snackbar'
+import CheckUser from './checkUser'
 
 
 const Signup = (props) => {
 
     const [creds, setCreds] = useState({username: '', password: '', email: '', age: '', location: ''})
+    const [snackbar, setSnackbar] = useState(false)
 
     const [user, setUser] = useContext(AuthUser)
 
@@ -43,16 +45,26 @@ const Signup = (props) => {
                 user: {...creds, avatar: `default-prof-pic.png`}
             })
         })
-        .then(res=>res.json())
-        .then((json)=>{
-            setUser(json.user)
-            let tmr = new Date(Date.now()+86400000)
-            document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/'`
+        .then(res=>{
+            if (res.ok){
+                return res.json()
+            }
+            else{
+                setSnackbar(true)
+            }
         })
-
-        setCreds({})
-        props.history.push('/dashboard')
-
+        .then((json)=>{
+            if (!snackbar){
+                setUser(json.user)
+                let tmr = new Date(Date.now()+86400000)
+                document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/'`
+                props.history.push('/dashboard')
+            }
+            else{
+                return null;
+            }
+        })
+        .catch(()=>{console.log('Error. Please try again.')})
     }
 
     return <div className='splash' onClick={handleOnClick}>
@@ -68,9 +80,13 @@ const Signup = (props) => {
                     <TextField label='Location (Zip Code)' type='text' value={creds.location} name='location' onChange={handleOnChange} {...textStyles}/><br />
                     <Button type='submit' variant='contained' size='large' color='primary'>Submit</Button>
                 </form>
+                <Snackbar open={snackbar} anchorOrigin={{vertical: 'bottom', horizontal: 'center'}} autoHideDuration={4000} onClose={()=>setSnackbar(false)}>
+                    <p className='error'>Username already exists. Please choose another one.</p>
+                </Snackbar>
                 <p>Have an account already? <NavLink to='/login'>Login</NavLink></p>
             </div>
         </Fade>
+        <CheckUser history={props.history} />
     </div>
 
 }

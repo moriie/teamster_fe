@@ -13,7 +13,7 @@ import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
 import Popper from '@material-ui/core/Popper'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import Profile from '../components/profile'
+import Profile from '../components/Auth/profile'
 
 import { AuthUser } from '../App'
 import { ViewState } from '../App'

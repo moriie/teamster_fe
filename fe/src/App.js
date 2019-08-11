@@ -10,7 +10,6 @@ import './App.css';
 export const AuthUser = createContext([{}, ()=>{}])
 export const ViewState = createContext([{}, ()=>{}])
 export const fetchURL = 'https://teamster-be.herokuapp.com'
-// export const fetchURL = 'http://localhost:3000'
 
 export function App() {
 
@@ -19,7 +18,6 @@ export function App() {
   const [modal, setModal] = useState(false)
 
   useEffect(()=>{
-
     if (!localStorage.getItem("visited")){
       localStorage.setItem("visited", 1)
     }
@@ -31,7 +29,8 @@ export function App() {
     })
     .then(res=>res.json())
     .then(json=>setUser({...user, ...json.user}))
-    .catch(()=>{setModal(true)})
+    .catch(console.log('Error, try again.'))
+    
   }, [])
 
   return (

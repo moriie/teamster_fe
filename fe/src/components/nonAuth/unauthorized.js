@@ -3,7 +3,7 @@ import React from 'react'
 const Unauthorized = (props) => {
 
     const redirect = () => {
-        setTimeout(()=>{props.history.push('/login')}, 2500)
+        setTimeout(()=>{props.history.push('/login')}, 2000)
     }
     
     return <div className='unauthorized'>

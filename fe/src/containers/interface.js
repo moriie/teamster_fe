@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { Route, withRouter } from 'react-router-dom'
-import GoalForm from '../components/goalform'
+import GoalForm from '../components/Auth/goalform'
 import GoalsContainer from './goalscontainer'
 import Main from './main'
 import NetworkContainer from './networkcontainer'
-import NetworkForm from '../components/networkform'
-import Profile from '../components/profile'
-import EditProfileForm from '../components/editprofileform'
-import Calendar from '../components/calendar'
+import NetworkForm from '../components/Auth/networkform'
+import Profile from '../components/Auth/profile'
+import EditProfileForm from '../components/Auth/editprofileform'
+import Calendar from '../components/Auth/calendar'
 
 import { ViewState } from '../App'
 
