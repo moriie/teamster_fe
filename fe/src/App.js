@@ -10,6 +10,7 @@ import './App.css';
 export const AuthUser = createContext([{}, ()=>{}])
 export const ViewState = createContext([{}, ()=>{}])
 export const fetchURL = 'https://teamster-be.herokuapp.com'
+// export const fetchURL = 'http://localhost:3000'
 
 export function App() {
 
@@ -18,16 +19,20 @@ export function App() {
   const [modal, setModal] = useState(false)
 
   useEffect(()=>{
-    localStorage.setItem("visited", 1)
-      fetch(`${fetchURL}/session`, {
-          headers: {
-              "Authorization": document.cookie
-          }
-      })
-      .then(res=>{res.json()})
-      .then(json=>setUser({...user, ...json}))
-      .catch(()=>{setModal(true)})
-    }, [])
+
+    if (!localStorage.getItem("visited")){
+      localStorage.setItem("visited", 1)
+    }
+
+    fetch(`${fetchURL}/session`, {
+        headers: {
+            "Authorization": document.cookie,
+        }
+    })
+    .then(res=>res.json())
+    .then(json=>setUser({...user, ...json.user}))
+    .catch(()=>{setModal(true)})
+  }, [])
 
   return (
     <AuthUser.Provider value={[user, setUser]}>

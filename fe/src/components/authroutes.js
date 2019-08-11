@@ -10,17 +10,19 @@ const AuthRoutes = (props) => {
     const [loading, setloading] = useState(true)
 
     useEffect(()=> {
-        setloading(false)
-    }, [])
+        if (!!user.username){
+            setTimeout(()=>setloading(false), 500)
+        }
+    }, [user])
 
     if (!!user){
         return <Fragment>
             <Navbar />
             <Route component={props.component} />
             <Modal open={loading}>
-                <div>
-                    <img src='teamster-logo.png' className='teamster-logo' alt='teamster-logo' />
-                    <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
+                <div className='loading'>
+                    <img src='teamster-logo.png' className='loading-logo' alt='teamster-logo' />
+                    <p className='loading-message'>Loading...</p>
                 </div>
             </Modal>
         </Fragment>

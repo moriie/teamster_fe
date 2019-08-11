@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react'
+import React, { useEffect, useContext, Fragment } from 'react'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
@@ -14,7 +14,7 @@ const Main = () => {
 
     const [user, setUser] = useContext(AuthUser)
     const [view, setView] = useContext(ViewState)
-
+    
     return <Fragment>
         <Card style={{gridArea: '1/2/span 3/span 3'}} id='main-header'>
             <CardContent>

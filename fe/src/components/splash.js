@@ -19,10 +19,6 @@ const Splash = () => {
         return localStorage.getItem("visited") == 1 ? '0ms' : '3000ms'
     }
 
-    const visited2 = () => {
-        return localStorage.getItem("visited") == 1 ? '0ms' : ''
-    }
-
     //add state to show "is this not you?"
     //set div 'front-page' to instead switch to showing buttons, login form, signup form
     

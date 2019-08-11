@@ -19,22 +19,16 @@ const Interface = () => {
         switch (view) {
             case 'calendar':
                 return <Route component={Calendar} />
-            break;
             case 'goals-container':
                 return <Route component={GoalsContainer} />
-            break;
             case 'goals-form':
                 return <Route component={GoalForm} />
-            break;
             case 'network-container':
                 return <Route component={NetworkContainer} />
-            break;
             case 'network-form':
                 return <Route component={NetworkForm} />
-            break;
             case 'edit-profile':
                 return <Route component={EditProfileForm} />
-            break;
             case 'profile-page':
                 return <Route component={Profile} />
             default:

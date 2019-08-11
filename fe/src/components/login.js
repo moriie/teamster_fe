@@ -3,7 +3,6 @@ import { AuthUser, fetchURL } from '../App'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
-import Input from '@material-ui/core/Input'
 import TextField from '@material-ui/core/TextField'
 
 const Login = (props) => {
@@ -63,7 +62,7 @@ const Login = (props) => {
                 <form onSubmit={(e)=>handleOnSubmit(e)} className='login-form'>
                     <TextField label='Username' type='text' value={username} name='username' onChange={e=>setUsername(e.target.value)} {...textStyles}/><br />
                     <TextField label='Password' type='password' value={password} name='password' onChange={e=>setPassword(e.target.value)} {...textStyles}/><br />
-                    <Button variant='contained' size='large' color='primary'><Input type='submit' value='submit'></Input></Button>
+                    <Button type='submit' variant='contained' size='large' color='primary'>Submit</Button>
                 </form>
                 <p>Don't have an account? <NavLink to='/signup'>Signup</NavLink></p>
             </div>
