@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
 
   def encode_token(payload)
-    JWT.encode(payload, 'itz a sekr3t d4t i wasnt cuul b4 smokin da juul')
+    JWT.encode(payload, 'Sneks are just danger noodles/nope ropes.')
   end
 
   def auth_header
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
     if auth_header
       token = auth_header.split('=')[1]
       begin
-        JWT.decode(token, 'itz a sekr3t d4t i wasnt cuul b4 smokin da juul', true, algorithm: 'HS256')
+        JWT.decode(token, 'Sneks are just danger noodles/nope ropes.', true, algorithm: 'HS256')
       rescue JWT::DecodeError
         nil
       end

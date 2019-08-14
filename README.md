@@ -12,7 +12,6 @@ Using React / React Router
 
 ### Packages/etc
 
-- Scrollreveal
 - Material-UI Core + Icons
 - Material-UI Pickers
 - @date-io/moment + Moment (Localization for use with Material-UI Pickers)
@@ -35,8 +34,7 @@ Using PostgreSQL
 
 ### Front End
 
-- Fully remove Scrollreveal - transition to Material-UI Fade. 
-- Make the app native / compatible with mobile. 
+- Make the app compatible with mobile. 
 - Fix state updating and remove flashing.
 
 ### Back End

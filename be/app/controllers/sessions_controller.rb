@@ -12,10 +12,9 @@ class SessionsController < ApplicationController
   end
 
   def auth_check
-    user = current_user
-
-    if user
-      render json: user
+    @user = current_user
+    if @user
+      render json: {user: @user}
     else
       render json: {error: 'Please login.'}
     end
