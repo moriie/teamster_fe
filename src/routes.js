@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom'
-import React, { useContext } from 'react'  
+import React from 'react'  
 
 import Signup from './components/nonAuth/signup'
 import Login from './components/nonAuth/login'

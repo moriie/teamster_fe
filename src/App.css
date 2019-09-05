@@ -266,18 +266,6 @@ div.blur-box {
   padding-bottom: 2.5%;
 }
 
-div.goal-box {
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  top: 15vh;
-  left: 30vw;
-  width: 40vw;
-  position: absolute;
-  z-index: 99;
-  background-color: hsla(213, 20%, 36%, 1);
-}
-
 .front-page button {
   height: 30%;
   width: 45%;  
@@ -355,6 +343,7 @@ div.blur-box .MuiInput-underline:hover:not(.Mui-disabled):before {
   margin-top: 5vh;
   margin-bottom: 5vh;
 }
+
 /*-------------------------------*/
 
 /* Goal Form */
@@ -446,6 +435,31 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 #interface .MuiListItem-root:hover {
   background-color: hsla(213, 20%, 36%, 0.8);
+}
+
+/* ----------------------------- */
+
+/* Goal Cards */
+
+
+div.goal-box {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  top: 15vh;
+  left: 30vw;
+  width: 40vw;
+  position: absolute;
+  z-index: 99;
+  background-color: hsla(213, 20%, 36%, 1);
+}
+
+div.confirm-box {
+  position: absolute;
+  display: block;
+  top: 50vh;
+  left: 25vw;
+  width: 50%;
 }
 
 /* ----------------------------- */
