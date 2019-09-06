@@ -462,6 +462,15 @@ div.confirm-box {
   width: 50%;
 }
 
+div.edit-goal {
+  position: absolute;
+  display: block;
+  top: 25vh;
+  left: 25vw;
+  width: 50%;
+  background-color: hsla(213, 20%, 36%, 1);
+}
+
 /* ----------------------------- */
 
 /* Navbar */

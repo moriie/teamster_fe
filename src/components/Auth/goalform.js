@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from 'react'
+import React, { Fragment, useState, useEffect, useContext } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -9,12 +9,18 @@ import { DateTimePicker } from '@material-ui/pickers';
 
 import { ViewState, AuthUser, fetchURL } from '../../App'
 
-const GoalForm = () => {
+const GoalForm = (props) => {
 
     const [goal, setGoal] = useState({repeatable: false, num: '1', interval: '1'})
     const [goaldate, setGoaldate] = useState(new Date())
     const [user, setUser] = useContext(AuthUser)
     const [view, setView] = useContext(ViewState)
+
+    useEffect(()=> {
+        if (props.goal){
+            setGoal({...goal, ...props.goal})
+        }
+    }, [])
 
     const handleOnSubmit = (e) => {
 
@@ -22,24 +28,47 @@ const GoalForm = () => {
         
         let time_basis = parseInt(goal.num) * parseInt(goal.interval)
 
-        fetch(`${fetchURL}/goals`, {
-            method: 'post',
-            headers: {
-                "Authorization": document.cookie,
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                goal: {
-                    description: goal.description,
-                    repeatable: goal.repeatable,
-                    time_basis: time_basis,
-                    user_id: user.id,
-                    end_date: goaldate,
-                }
+        if (!props.goal){ 
+            fetch(`${fetchURL}/goals`, {
+                method: 'post',
+                headers: {
+                    "Authorization": document.cookie,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    goal: {
+                        description: goal.description,
+                        repeatable: goal.repeatable,
+                        time_basis: time_basis,
+                        user_id: user.id,
+                        end_date: goaldate,
+                    }
+                })
             })
-        })
-        .then(()=>setView('goals-container'))
+            .then(()=>setView('goals-container'))
+        }
+        else {
+            fetch(`${fetchURL}/goals/${props.goal.id}`, {
+                method: 'PUT',
+                headers: {
+                    "Authorization": document.cookie,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    goal: {
+                        description: goal.description,
+                        repeatable: goal.repeatable,
+                        time_basis: time_basis,
+                        user_id: user.id,
+                        end_date: goaldate,
+                    }
+                })
+            })
+            .then(()=>props.edit())
+            .then(()=>props.close())
+        }
     }
 
     const handleOnChange = (e) => {
@@ -106,7 +135,7 @@ const GoalForm = () => {
 
     //TODO: Ask user if they would like to add or search for a partner at this time or not.
     return <div id='goalform' style={{gridArea: '1/3/span 10/span 1'}}>
-        <h1>Create New Goal</h1>
+        <h1>{props.goal ? 'Edit Goal' : 'Create New Goal'}</h1>
         <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
         <TextField multiline={true} rows={12} variant={'filled'} value={goal.description} onChange={handleOnChange} name='description' className='textarea'/> <br />

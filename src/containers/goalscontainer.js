@@ -25,7 +25,7 @@ const GoalsContainer = () => {
 
     const createGoals = () => {
         return goals.map((goal)=>{
-            return <GoalCard key={`${goal.id}-${uuid()}`} goal={{...goal}} delete={handleDelete} />
+            return <GoalCard key={`${goal.id}-${uuid()}`} goal={{...goal}} delete={handleDelete} edit={handleEdit}/>
         })
     }
     
@@ -44,6 +44,15 @@ const GoalsContainer = () => {
 
         setGoals(newGoals)
         
+    }
+
+    const handleEdit = (goal) => {
+        fetch(`${fetchURL}/goals`)
+        .then(resp=>resp.json())
+        .then((json)=>{
+            let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
+            setGoals(dbgoals)
+        }) 
     }
 
     return <Fragment>

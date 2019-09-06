@@ -3,17 +3,22 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
-import { fetchURL } from '../../App.js'
+import Goalform from './goalform'
 
 const GoalCard = (props) => {
 
     const [open, setOpen] = useState(false)
+    const [edit, setEdit] = useState(false)
     const [confirm, setConfirm] = useState(false)
 
     const handleRepeat = () => {
         if (props.goal.repeatable){
             return <p>This goal repeats every <b>{handleRepeatLength()}</b></p>
         }
+    }
+
+    const handleEdit = () => {
+        setEdit(!edit)
     }
 
     const handleRepeatLength = () => {
@@ -54,7 +59,7 @@ const GoalCard = (props) => {
                 <p>Due: {`${props.goal.end_date.match(/\S+(?=T)/)} at ${props.goal.end_date.match(/\d{2}:{1}\d{2}/)}`}</p>
                 {handleRepeat()}
                 {handlePartner()}  
-                <Button variant='contained' size='large' color='primary' onClick={null}>Edit Goal</Button>
+                <Button variant='contained' size='large' color='primary' onClick={handleEdit}>Edit Goal</Button>
                 <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>Delete Goal</Button>
                 <Modal open={confirm}>
                     <div className='confirm-box'>
@@ -65,6 +70,11 @@ const GoalCard = (props) => {
                             <Button variant='contained' size='large' color='primary' onClick={()=>props.delete(props.goal.id)}>Yes</Button>
                             <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>No</Button>
                         </span>
+                    </div>
+                </Modal>
+                <Modal open={edit}>
+                    <div className='edit-goal'>
+                        <Goalform goal={props.goal} close={handleEdit} edit={props.edit}/>
                     </div>
                 </Modal>
             </div>
