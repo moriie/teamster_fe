@@ -1,11 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import moment from 'moment'
 import uuid from 'uuid/v4'
 
 const Calendar = () => {
 
     const [date, setDate] = useState(moment())
-    const [month, setMonth] = useState([])
+    const [month, setMonth] = useState(0)
+
+    useEffect(()=>{
+        setDate(moment().add(month, 'month'))
+    }, [month])
 
     const weekdays = moment.weekdays().map((day)=>{
         return <span className='cal-n' key={day+uuid()}>{day}</span>
@@ -27,9 +31,9 @@ const Calendar = () => {
 
     return <div className='calendar'>
         <span className='m-title'>
-            <button>{'<'}</button>
-            {date.format('MMMM')}
-            <button>{'>'}</button>
+            <button id='cal-btn' onClick={()=>setMonth(month-1)}>{'<'}</button>
+            {date.format('MMMM')+' '+date.format('YYYY')}
+            <button id='cal-btn' onClick={()=>setMonth(month+1)}>{'>'}</button>
         </span>
         {weekdays}
         {createMonth(date)}
