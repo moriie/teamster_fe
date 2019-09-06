@@ -26,7 +26,11 @@ const Calendar = () => {
     }
 
     return <div className='calendar'>
-        <span className='m-title'>{date.format('MMMM')}</span>
+        <span className='m-title'>
+            <button>{'<'}</button>
+            {date.format('MMMM')}
+            <button>{'>'}</button>
+        </span>
         {weekdays}
         {createMonth(date)}
     </div>
