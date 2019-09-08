@@ -598,6 +598,11 @@ div.profile-menu{
   border: 1px solid black;
 }
 
+#month-year {
+  display: inline-block;
+  min-width: 25vw;
+}
+
 #cal-btn {
   color: whitesmoke;
   background-color: transparent;

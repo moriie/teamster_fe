@@ -32,7 +32,7 @@ const Calendar = () => {
     return <div className='calendar'>
         <span className='m-title'>
             <button id='cal-btn' onClick={()=>setMonth(month-1)}>{'<'}</button>
-            {date.format('MMMM')+' '+date.format('YYYY')}
+            <div id='month-year'>{date.format('MMMM')+' '+date.format('YYYY')}</div>
             <button id='cal-btn' onClick={()=>setMonth(month+1)}>{'>'}</button>
         </span>
         {weekdays}
