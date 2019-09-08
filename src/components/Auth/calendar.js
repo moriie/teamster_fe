@@ -26,6 +26,9 @@ const Calendar = () => {
         for (let e_day = date.endOf('month').format('d'); e_day < 6; e_day++){
             thisMonth.push(<span className='cal-d empty' key={`${e_day}-${uuid()}`}/>)
         }
+        if (thisMonth.length > 35) {
+            thisMonth[thisMonth.length-1] = <span className='cal-d empty' style={{gridArea: '8/7/8/7'}} key={`${date.endOf('month').format('d')}-${uuid()}`}/>
+        }
         return thisMonth
     }
 
