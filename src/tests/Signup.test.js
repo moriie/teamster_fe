@@ -2,6 +2,7 @@ import React from 'react'
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils"
 import Signup from '../components/nonAuth/signup'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 let container = null;
 beforeEach(() => {
@@ -40,7 +41,11 @@ it("renders error messages from the backend in a modal", async ()=>{
   )
 
   await act(async () => {
-    render(<Signup />, container)
+    render(
+      <Router>
+        <Signup />
+      </Router>
+    , container)
   })
 
   expect(container.querySelector(".error").textContent).toBe(response.error)
