@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { AuthUser, fetchURL } from '../../App'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
