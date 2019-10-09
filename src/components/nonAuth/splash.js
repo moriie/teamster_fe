@@ -5,6 +5,8 @@ import Fade from '@material-ui/core/Fade'
 import uuid from 'uuid/v4'
 import CheckUser from './checkUser'
 
+import styled from 'styled-components'
+
 
 const Splash = (props) => {
 
@@ -24,18 +26,18 @@ const Splash = (props) => {
         <img src='./bgr.png' className='bg' alt=''/>
         <div className='front-page'>
             <h1 className='app-name'>{createTitle()}</h1>
-            <div id='m-1' className='subtitle'>
+            <TextSlide>
                 <div>Create</div>
                 <div><span>New Relationships</span></div>
-            </div><br />
-            <div id='m-2' className='subtitle'>
+            </TextSlide><br />
+            <TextSlide>
                 <div>Gain</div>
                 <div><span>New Skills</span></div>
-            </div><br />
-            <div id='m-3' className='subtitle'>
+            </TextSlide><br />
+            <TextSlide>
                 <div>Exceed</div>
                 <div><span>Your Expectations</span></div>
-            </div><br />
+            </TextSlide><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link></Fade><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link></Fade>
             < CheckUser history={props.history} />
@@ -44,3 +46,45 @@ const Splash = (props) => {
 }
 
 export default Splash
+
+const TextSlide = styled.div`
+    font-size: 1.67vw;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+
+    div:first-of-type {
+        animation: sub-reveal 7s 3s 1 both;
+    }
+
+    div:last-of-type {
+        width: 0;
+        animation: full-reveal 8s 3s 1 both;   
+    }
+
+    div:last-of-type span {
+        margin-left: -25vw;
+        animation: left-swoop 7s 3s 1 both;
+    }
+
+    @keyframes sub-reveal {
+        0% {opacity: 0;}
+        20% {opacity: 1;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes left-swoop {
+        0% {margin-left: -67vw;}
+        20% {margin-left: -67vw;}
+        35% {margin-left: 0;}
+        100% {margin-left: 0;}
+    }
+
+    @keyframes full-reveal {
+        0% {opacity: 0; width: 0;}
+        20% {opacity: 1; width: 0;}
+        30% {width: 15vw}
+        100% {opacity: 1; width: 15vw;}
+    }
+`

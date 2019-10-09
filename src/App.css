@@ -94,41 +94,18 @@ div.visited{
   color: black;
 }
 
-.subtitle{
-  font-size: 1.67vw;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
 .front-page *::selection{
   background-color: transparent;
 }
 
-#m-1 div{
-  display: table-cell;
-}
 
-#m-1 div:first-of-type{
-  animation: sub-reveal 7s 3s 1 both;
-}
-
-#m-1 div:last-of-type{
+/* #m-1 div:last-of-type{
   width: 0;
   animation: full-reveal 8s 3s 1 both;
 }
 
 #m-1 div:last-of-type span{
   animation: left-swoop 7s 3s 1 both;
-}
-
-#m-2 div{
-  display: table-cell;
-}
-
-#m-2 div:first-of-type{
-  animation: sub-reveal 7s 4s 1 both;
 }
 
 #m-2 div:last-of-type{
@@ -141,14 +118,6 @@ div.visited{
   animation: left-swoop 7s 4s 1 both;
 }
 
-#m-3 div{
-  display: table-cell;
-}
-
-#m-3 div:first-of-type{
-  animation: sub-reveal 7s 5s 1 both;
-}
-
 #m-3 div:last-of-type{
   width: 0;
   animation: full-reveal-3 9s 5s 1 both;
@@ -157,32 +126,32 @@ div.visited{
 #m-3 div:last-of-type span{
   margin-left: -25vw;
   animation: left-swoop 7s 5s 1 both;
-}
+} */
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
-@keyframes sub-reveal {
+/* @keyframes sub-reveal {
   0% {opacity: 0;}
   20% {opacity: 1;}
   100% {opacity: 1;}
-}
+} */
 
-@keyframes left-swoop {
+/* @keyframes left-swoop {
   0% {margin-left: -67vw;}
   20% {margin-left: -67vw;}
   35% {margin-left: 0;}
   100% {margin-left: 0;}
-}
+} */
 
-@keyframes full-reveal {
+/* @keyframes full-reveal {
   0% {opacity: 0; width: 0;}
   20% {opacity: 1; width: 0;}
   30% {width: 15vw}
   100% {opacity: 1; width: 15vw;}
-}
-
+} */
+/* 
 @keyframes full-reveal-2 {
   0% {opacity: 0; width: 0;}
   20% {opacity: 1; width: 0;}
@@ -195,7 +164,7 @@ div.visited{
   20% {opacity: 1; width: 0;}
   30% {width: 14vw}
   100% {opacity: 1; width: 14vw;}
-}
+} */
 
 .home{
   background-size: cover;
