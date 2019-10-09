@@ -28,15 +28,15 @@ const Splash = (props) => {
             <h1 className='app-name'>{createTitle()}</h1>
             <TextSlide>
                 <div>Create</div>
-                <div><span>New Relationships</span></div>
+                <div className='m1'><span>New Relationships</span></div>
             </TextSlide><br />
             <TextSlide>
                 <div>Gain</div>
-                <div><span>New Skills</span></div>
+                <div className='m2'><span>New Skills</span></div>
             </TextSlide><br />
             <TextSlide>
                 <div>Exceed</div>
-                <div><span>Your Expectations</span></div>
+                <div className='m3'><span>Your Expectations</span></div>
             </TextSlide><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link></Fade><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link></Fade>
@@ -54,18 +54,36 @@ const TextSlide = styled.div`
     white-space: nowrap;
     pointer-events: none;
 
+    div {
+        display: table-cell;
+    }
+
     div:first-of-type {
         animation: sub-reveal 7s 3s 1 both;
     }
 
-    div:last-of-type {
-        width: 0;
-        animation: full-reveal 8s 3s 1 both;   
+    div.m1 {
+        animation: full-reveal 9s 3s 1 both;
+
+        span {
+            animation: left-swoop 7s 3s 1 both;
+        }
     }
 
-    div:last-of-type span {
-        margin-left: -25vw;
-        animation: left-swoop 7s 3s 1 both;
+    div.m2 {
+        animation: full-reveal 9s 4s 1 both;
+        
+        span {
+            animation: left-swoop 7s 4s 1 both;
+        }
+    }
+
+    div.m3 {
+        animation: full-reveal 9s 5s 1 both;
+        
+        span {
+            animation: left-swoop 7s 5s 1 both;
+        }
     }
 
     @keyframes sub-reveal {
@@ -77,14 +95,12 @@ const TextSlide = styled.div`
     @keyframes left-swoop {
         0% {margin-left: -67vw;}
         20% {margin-left: -67vw;}
-        35% {margin-left: 0;}
-        100% {margin-left: 0;}
+        35% {margin-left: .5vw;}
+        100% {margin-left: .5vw;}
     }
 
     @keyframes full-reveal {
-        0% {opacity: 0; width: 0;}
-        20% {opacity: 1; width: 0;}
-        30% {width: 15vw}
-        100% {opacity: 1; width: 15vw;}
+        0% {opacity: 0}
+        20% {opacity: 1}
     }
 `
