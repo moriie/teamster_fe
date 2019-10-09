@@ -22,9 +22,9 @@ const Splash = (props) => {
         return localStorage.getItem("visited") == 1 ? '0ms' : '3000ms'
     }
     
-    return <div className='splash'>
-        <img src='./bgr.png' className='bg' alt=''/>
-        <div className='front-page'>
+    return <div>
+        <Background src='./bgr.png' className='bg' alt=''/>
+        <ContentContainer>
             <h1 className='app-name'>{createTitle()}</h1>
             <TextSlide>
                 <div>Create</div>
@@ -41,11 +41,13 @@ const Splash = (props) => {
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/login'><Button variant='contained' size='large' color='primary'>{`Login`}</Button></Link></Fade><br />
             <Fade in={true} timeout={{enter: 3000}} style={{transitionDelay: visited1()}}>< Link to='/signup'><Button variant='contained' size='large' color='primary'>{`Signup`}</Button></ Link></Fade>
             < CheckUser history={props.history} />
-        </div>
+        </ContentContainer>
     </div>
 }
 
 export default Splash
+
+//----Styles----//
 
 const TextSlide = styled.div`
     font-size: 1.67vw;
@@ -102,5 +104,34 @@ const TextSlide = styled.div`
     @keyframes full-reveal {
         0% {opacity: 0}
         20% {opacity: 1}
+    }
+`
+
+const Background = styled.img`
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+`
+
+const ContentContainer = styled.div`
+    top: 7.5%;
+    left: 30%;
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    z-index: 98;
+
+    button {
+        height: 30%;
+        width: 45%;  
+        font-size: 2vw;
+        margin-top: 2%;
+    }
+
+    *::selection {
+        background-color: transparent;
     }
 `

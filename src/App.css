@@ -43,14 +43,6 @@ div.visited{
   height: 5vw;
 }
 
-#navbar{
-  position: relative;
-  box-shadow: 0px 8px 4px #333;
-  background-color: rgb(128, 60, 48);
-}
-
-
-
 .teamster-logo{
   height: 100%;
   width: 4%;
@@ -88,14 +80,6 @@ div.visited{
   width: 50vw;
   font-size: 1.5vw;
   background-color: hsla(213, 30%, 56%, 0.8);
-}
-
-.unauthorized{
-  color: black;
-}
-
-.front-page *::selection{
-  background-color: transparent;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -141,24 +125,6 @@ a {
   text-decoration: none;
 }
 
-.bg {
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-
-div.front-page {
-  top: 7.5%;
-  left: 30%;
-  height: 40%;
-  width: 40%;
-  position: absolute;
-  z-index: 98;
-}
-
 div.blur-box {
   display: flex;
   flex-direction: column;
@@ -169,13 +135,6 @@ div.blur-box {
   z-index: 99;
   background-color: hsla(213, 20%, 36%, 0.7);
   padding-bottom: 2.5%;
-}
-
-.front-page button {
-  height: 30%;
-  width: 45%;  
-  font-size: 2vw;
-  margin-top: 2%;
 }
 
 h1.app-name {
@@ -374,38 +333,6 @@ div.edit-goal {
   left: 25vw;
   width: 50%;
   background-color: hsla(213, 20%, 36%, 1);
-}
-
-/* ----------------------------- */
-
-/* Navbar */
-
-#navbar a.active button {
-  margin-top: .5vh;
-  float: left;
-  color: whitesmoke;
-}
-
-#navbar .MuiAvatar-root{
-  width: 3.5vw;
-  height: 7vh;
-}
-
-div.MuiTooltip-popper .MuiTooltip-tooltip{
-  margin-top: 0;
-  font-size: 1vw;
-}
-
-div.profile-menu{
-  color: whitesmoke;
-  background-color: hsla(213, 20%, 36%, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.753);
-  border-radius: 5px;
-}
-
-#navbar svg.MuiSvgIcon-root{
-  color: rgb(179, 153, 153);
-  font-size: 3.25vw;
 }
 
 /* ----------------------------- */

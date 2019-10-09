@@ -15,6 +15,8 @@ import Popper from '@material-ui/core/Popper'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import Profile from '../components/Auth/profile'
 
+import styled from 'styled-components'
+
 import { AuthUser } from '../App'
 import { ViewState } from '../App'
 
@@ -27,7 +29,7 @@ const Navbar = (props) => {
 
     return (
     <Fade in={true} timeout={2000}>
-        <div id='navbar'>
+        <NavbarWrapper>
             <span> 
                 <NavLink to='/'>
                     <img src='teamster-logo.png' className='teamster-logo' alt='teamster-logo' />
@@ -53,15 +55,15 @@ const Navbar = (props) => {
                         <NetworkIcon />
                     </IconButton>
                 </Tooltip>
-                    <Tooltip title='Your Partners'>
+                <Tooltip title='Your Partners'>
                     <IconButton className='nav-btn'>
                         <FriendIcon />
                     </IconButton>
                 </Tooltip>
-                <IconButton className='profile-btn' style={{float: 'right', padding: 0, margin: '.5% .5%', width: '64px', height: '64px'}} onClick={()=>setmenuState(!menuState)}>
+                <IconButton className='profile-btn' onClick={()=>setmenuState(!menuState)}>
                     <Avatar src={user.avatar} alt='user-profile-pic'/>
                 </IconButton>
-                <ClickAwayListener onClickAway={()=>setmenuState(false)}>
+                <ClickAwayListener onClickAway={()=>setmenuState(!menuState)}>
                     <Popper open={menuState} placement='bottom-start' anchorEl={document.querySelector('img.MuiAvatar-img')} className='profile-menu'>
                         <MenuList>
                             <MenuItem onClick={()=>setView('profile-page')}>
@@ -74,9 +76,51 @@ const Navbar = (props) => {
                     </Popper>
                 </ClickAwayListener>
             </span>
-        </div>
+        </NavbarWrapper>
     </Fade>
     )
 }
 
 export default withRouter(Navbar);
+
+const NavbarWrapper = styled.div`
+    position: relative;
+    box-shadow: 0px 8px 4px #333;
+    background-color: rgb(128, 60, 48);
+
+    a.active button {
+        margin-top: .5vh;
+        float: left;
+        color: whitesmoke;
+    }
+
+    .MuiAvatar-root {
+        width: 3.5vw;
+        height: 7vh;
+    }
+
+    div.MuiTooltip-popper .MuiTooltip-tooltip{
+        margin-top: 0;
+        font-size: 1vw;
+    }
+
+    div.profile-menu{
+        color: whitesmoke;
+        background-color: hsla(213, 20%, 36%, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.753);
+        border-radius: 5px;
+    }
+
+    .profile-btn {
+        float: right;
+        padding: 0;
+        margin: .5vh .5vw;
+        width: 64px;
+        height: 64px;
+    }
+
+    svg.MuiSvgIcon-root{
+        color: rgb(179, 153, 153);
+        font-size: 3.25vw;
+    }
+`

@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const Unauthorized = (props) => {
 
@@ -6,11 +7,15 @@ const Unauthorized = (props) => {
         setTimeout(()=>{props.history.push('/login')}, 2000)
     }
     
-    return <div className='unauthorized'>
+    return <AuthError>
         <h1>Error: please login to your account to view this page.</h1>
         <p>Redirecting...</p>
         {redirect()}
-    </div>
+    </AuthError>
 }
 
 export default Unauthorized
+
+const AuthError = styled.div`
+    color: black;
+`
