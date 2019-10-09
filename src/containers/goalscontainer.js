@@ -5,6 +5,8 @@ import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import Fade from '@material-ui/core/Fade'
 
+import styled from 'styled-components'
+
 import { AuthUser, ViewState, fetchURL } from '../App'
 
 
@@ -67,3 +69,4 @@ const GoalsContainer = () => {
 }
 
 export default GoalsContainer
+

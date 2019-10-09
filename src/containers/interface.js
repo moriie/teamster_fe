@@ -9,6 +9,8 @@ import Profile from '../components/Auth/profile'
 import EditProfileForm from '../components/Auth/editprofileform'
 import Calendar from '../components/Auth/calendar'
 
+import styled from 'styled-components'
+
 import { ViewState } from '../App'
 
 const Interface = () => {
@@ -37,11 +39,84 @@ const Interface = () => {
     }
 
     return <div className='home'>
-        <div id='interface'>
+        <Wrapper>
             {handleView()}
-        </div>
+        </Wrapper>
     </div>
 }
 
 export default withRouter(Interface)
 
+//----Styles----//
+
+const Wrapper = styled.div`
+    grid-area: 1/1/20/10;
+    display: grid;
+    grid-template-rows: repeat(20, 5%);
+    grid-template-columns: repeat(5, 20%);
+
+    div.MuiPaper-root{
+        color: whitesmoke;
+        background-color: rgba(51, 51, 51, 0.188);
+        box-shadow: 6px 4px 6px #333;
+    }
+
+    #main-header{
+        animation: none;
+    }
+
+    div.MuiCardHeader-root{
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+    }
+
+    div.MuiCardActions-root{
+        display: flex;
+        flex-direction: row;
+    }
+
+    div.MuiCardActions-root button{
+        margin-bottom: -100%;
+        flex: 1 1 0;
+    }
+
+    span.MuiTypography-root{
+        font-size: 3.5vw;
+        pointer-events: none;
+    }
+
+    p.MuiTypography-root{
+        pointer-events: none;
+    }
+
+    div.MuiPaper-root:hover div.MuiCardActions-root button{
+        animation: reveal-option .5s ease-in-out forwards;
+    }
+
+    @keyframes reveal-option { from {margin-bottom: -100%} to {margin-bottom: 0%;}}
+
+    .MuiTypography-root::selection{
+        background-color: transparent;
+    }
+
+    .MuiListItem-root:hover {
+        background-color: hsla(213, 20%, 36%, 0.8);
+    }
+
+    ul.goals-container .MuiListItem-root {
+        height: 10vh;
+        background-color: hsla(213, 20%, 36%, 0.5);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.507);
+    }
+
+    ul.MuiList-root .MuiTypography-root{
+        overflow: auto;
+        margin-top: 1vh;
+        font-size: 1.5vw;
+        color: whitesmoke;
+    }
+
+    .MuiPaper-root {
+        margin-top: 1vh;
+    }
+`
