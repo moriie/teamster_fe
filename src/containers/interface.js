@@ -103,12 +103,6 @@ const Wrapper = styled.div`
         background-color: hsla(213, 20%, 36%, 0.8);
     }
 
-    ul.goals-container .MuiListItem-root {
-        height: 10vh;
-        background-color: hsla(213, 20%, 36%, 0.5);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.507);
-    }
-
     ul.MuiList-root .MuiTypography-root{
         overflow: auto;
         margin-top: 1vh;

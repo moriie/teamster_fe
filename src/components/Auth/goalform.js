@@ -135,7 +135,7 @@ const GoalForm = (props) => {
 
 
     //TODO: Ask user if they would like to add or search for a partner at this time or not.
-    return <div id='goalform' style={{gridArea: '1/3/span 10/span 1'}}>
+    return <FormWrapper>
         <h1>{props.goal ? 'Edit Goal' : 'Create New Goal'}</h1>
         <form onSubmit={handleOnSubmit}>
         <label>Description</label> <br />
@@ -152,7 +152,69 @@ const GoalForm = (props) => {
         {showTimeBasis()}
         <Button type='submit' value='submit' variant='outlined'>Submit</Button>
         </form>
-    </div>
+    </FormWrapper>
 }
 
 export default GoalForm
+
+//----Styles----//
+
+const FormWrapper = styled.div`
+    grid-area: 1/3/span 10/span 1;
+
+    .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-formControl.MuiInputBase-multiline.MuiFilledInput-multiline{
+        background-color: rgba(0, 0, 0, 0.200);
+        margin-bottom: 10px;
+    }
+
+    .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-formControl.MuiInputBase-multiline.MuiFilledInput-multiline:hover{
+        background-color: rgba(0, 0, 0, 0.300);
+    }
+
+    .MuiInputBase-root:hover{
+        background-color: rgba(0, 0, 0, 0.100);
+    }
+
+    .MuiInputBase-input{
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .MuiSelect-select{
+        border: 1px solid black;
+        border-radius: 3px;
+        width: 4vw;
+    }
+
+    div .MuiInput-underline:before{
+        display: none;
+    }
+
+    div.MuiFormControl-root{
+        margin-bottom: 10px;
+    }
+
+    .MuiInputLabel-root{
+        margin-left: 5px;
+        color: white;
+    }
+
+    .MuiInputLabel-shrink{
+        margin-left: 0px;
+    }
+
+    span.MuiButton-label{
+        color: white;
+    }
+
+    button {
+        border: 1px solid black;
+    }
+
+    #end_date {
+        border: 1px solid black;
+        border-radius: 3px;
+        margin-left: 2px;
+        width: 13.5vw;
+        text-align: center;
+    }
+`
