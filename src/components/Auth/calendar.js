@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
 import moment from 'moment'
 import uuid from 'uuid/v4'
 
@@ -32,16 +33,75 @@ const Calendar = () => {
         return thisMonth
     }
 
-    return <div className='calendar'>
-        <span className='m-title'>
-            <button id='cal-btn' onClick={()=>setMonth(month-1)}>{'<'}</button>
+    return <Wrapper>
+        <Title>
+            <button onClick={()=>setMonth(month-1)}>{'<'}</button>
             <div id='month-year'>{date.format('MMMM')+' '+date.format('YYYY')}</div>
-            <button id='cal-btn' onClick={()=>setMonth(month+1)}>{'>'}</button>
-        </span>
+            <button onClick={()=>setMonth(month+1)}>{'>'}</button>
+        </Title>
         {weekdays}
         {createMonth(date)}
-    </div>
+    </Wrapper>
 
 }
 
 export default Calendar;
+
+const Wrapper = styled.div`
+    grid-area: 1/1/20/10;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 7.5% 3% repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    background-color: hsla(213, 20%, 36%, 0.7);
+    font-size: 2vw;
+
+    @media screen and (min-width: 500px){
+        .cal-n{
+            font-size: 50%;
+        }
+    }
+
+    .cal-n:first-of-type{
+        grid-area: 2/1/2/1;
+    }
+
+    .cal-n:last-of-type{
+        grid-area:2/7/2/7;
+    }
+
+    .cal-d:first-of-type{
+        grid-area: 3/1/3/1;
+    }
+
+    .cal-d:last-of-type{
+        grid-area: 7/7/8/7;
+    }
+
+    .cal-n{
+        border: 1px solid black;
+    }
+
+    .cal-d{
+        border: 1px solid black;
+    }
+
+    #month-year {
+        display: inline-block;
+        min-width: 25vw;
+    }
+`
+
+const Title = styled.span`
+    grid-area: 1/1/1/8;
+    font-size: 2.5vw;
+    color: whitesmoke;
+
+    button {
+        color: whitesmoke;
+        background-color: transparent;
+        border: none;
+        font-size: 1em;
+        outline: none;
+    }
+`

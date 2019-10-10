@@ -8,6 +8,7 @@ import NetworkForm from '../components/Auth/networkform'
 import Profile from '../components/Auth/profile'
 import EditProfileForm from '../components/Auth/editprofileform'
 import Calendar from '../components/Auth/calendar'
+import bg from '../dash_BG.jpg'
 
 import styled from 'styled-components'
 
@@ -38,18 +39,18 @@ const Interface = () => {
         }
     }
 
-    return <div className='home'>
-        <Wrapper>
+    return <Wrapper>
+        <Interactive>
             {handleView()}
-        </Wrapper>
-    </div>
+        </Interactive>
+    </Wrapper>
 }
 
 export default withRouter(Interface)
 
 //----Styles----//
 
-const Wrapper = styled.div`
+const Interactive = styled.div`
     grid-area: 1/1/20/10;
     display: grid;
     grid-template-rows: repeat(20, 5%);
@@ -113,4 +114,15 @@ const Wrapper = styled.div`
     .MuiPaper-root {
         margin-top: 1vh;
     }
+`
+const Wrapper = styled.div`
+    background-size: cover;
+    background-image: url(${bg});
+    height: 96vh;
+    width: 100vw;
+    margin-right: 0;
+    display: grid;
+    color: white;
+    grid-template-rows: repeat(10, 10%);
+    grid-template-columns: repeat(5, 20%);
 `
