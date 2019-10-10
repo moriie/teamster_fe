@@ -4,6 +4,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
 import Goalform from './goalform'
+import styled from 'styled-components'
 
 const GoalCard = (props) => {
 
@@ -54,7 +55,7 @@ const GoalCard = (props) => {
             </ListItemText>
         </ListItem>
         <Modal aria-labelledby={props.goal.description} open={open} onClose={()=>setOpen(false)}>
-            <div className='goal-box'>
+            <GoalBox>
                 <h1>{props.goal.description}</h1>
                 <p>Due: {`${props.goal.end_date.match(/\S+(?=T)/)} at ${props.goal.end_date.match(/\d{2}:{1}\d{2}/)}`}</p>
                 {handleRepeat()}
@@ -62,7 +63,7 @@ const GoalCard = (props) => {
                 <Button variant='contained' size='large' color='primary' onClick={handleEdit}>Edit Goal</Button>
                 <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>Delete Goal</Button>
                 <Modal open={confirm}>
-                    <div className='confirm-box'>
+                    <Confirm>
                         <h2>
                             Are you sure you want to delete this goal?
                         </h2>
@@ -70,16 +71,45 @@ const GoalCard = (props) => {
                             <Button variant='contained' size='large' color='primary' onClick={()=>props.delete(props.goal.id)}>Yes</Button>
                             <Button variant='contained' size='large' color='primary' onClick={handleConfirm}>No</Button>
                         </span>
-                    </div>
+                    </Confirm>
                 </Modal>
                 <Modal open={edit}>
-                    <div className='edit-goal'>
+                    <Edit>
                         <Goalform goal={props.goal} close={handleEdit} edit={props.edit}/>
-                    </div>
+                    </Edit>
                 </Modal>
-            </div>
+            </GoalBox>
         </Modal>
     </div>
 }
 
 export default GoalCard
+
+const GoalBox = styled.div`
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    top: 15vh;
+    left: 30vw;
+    width: 40vw;
+    position: absolute;
+    z-index: 99;
+    background-color: hsla(213, 20%, 36%, 1);
+`
+
+const Confirm = styled.div`
+    position: absolute;
+    display: block;
+    top: 50vh;
+    left: 25vw;
+    width: 50%;
+`
+
+const Edit = styled.div`
+    position: absolute;
+    display: block;
+    top: 25vh;
+    left: 25vw;
+    width: 50%;
+    background-color: hsla(213, 20%, 36%, 1);
+`

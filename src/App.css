@@ -176,37 +176,3 @@ div#root div.MuiDrawer-paperAnchorLeft{
 
 
 /* ----------------------------- */
-
-/* Goal Cards */
-
-
-div.goal-box {
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  top: 15vh;
-  left: 30vw;
-  width: 40vw;
-  position: absolute;
-  z-index: 99;
-  background-color: hsla(213, 20%, 36%, 1);
-}
-
-div.confirm-box {
-  position: absolute;
-  display: block;
-  top: 50vh;
-  left: 25vw;
-  width: 50%;
-}
-
-div.edit-goal {
-  position: absolute;
-  display: block;
-  top: 25vh;
-  left: 25vw;
-  width: 50%;
-  background-color: hsla(213, 20%, 36%, 1);
-}
-
-/* ----------------------------- */
