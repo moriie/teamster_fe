@@ -6,10 +6,17 @@ const PartnerCard = (props) => {
     return <Card>
         <Showcase>
             <img src={props.info.avatar} alt={`User ${props.info.id} avatar`}/>
-            <span>{props.info.username}</span>
+            <div>{props.info.username}</div>
         </Showcase>
         <UserInfo>
+            <h1>PLACEHOLDER FOR NAME, {props.info.age}</h1>
+            <p>{props.info.bio ? props.info.bio : "This user has no bio..."}</p>
         </UserInfo>
+        <UserInteractions>
+            <button>Add User</button>
+            <button>Message</button>
+            <button>Skip</button>
+        </UserInteractions>
     </Card>
 
 }
@@ -18,11 +25,8 @@ export default PartnerCard
 
 const Card = styled.div`
     width: 90%;
-    height: 30vh;
+    max-height: 30vh;
     margin-top: 2vh;
-    /* border-bottom: 1px solid white;
-    border-left: 1px solid white;
-    border-right: 1px solid white; */
     display: flex;
     flex-direction: row;
 `
@@ -30,16 +34,47 @@ const Showcase = styled.div`
     width: 25%;
 
     img {
-        height: 85%;
-        width: 100%;
+        max-width: 100%;
         border-radius: 10px;
     }
 
-    span {
+    div {
         font-size: 18px;
     }
 `
 
 const UserInfo = styled.div`
     width: 50%;
+
+    h1 {
+        margin-top: 0;
+        font-size: 24px;
+    }
+`
+
+const UserInteractions = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+    justify-content: center;
+    
+    button {
+        height: 30%;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+        background-color: #3f51b5;
+        border: 0px;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: #334296;
+        }
+
+        &:focus {
+            outline: none;
+            background-color: #334296;
+        }
+    }
 `

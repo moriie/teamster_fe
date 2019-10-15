@@ -41,7 +41,6 @@ const PartnersList = styled.ul`
     background-color: hsla(213, 20%, 36%, 0.7);
 
     div:first-child {
-        /* border-top: 1px solid white; */
         margin-top: 0px;
     }
 `
