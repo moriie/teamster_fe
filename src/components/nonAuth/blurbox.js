@@ -23,14 +23,8 @@ h1 {
     color: white;
 }
 
-.MuiInput-underline:before {
-    border-bottom: none;
-}
-
-.MuiInput-underline:after {
-    border-bottom: none;
-}
-
+.MuiInput-underline:before,
+.MuiInput-underline:after,
 .MuiInput-underline:hover:not(.Mui-disabled):before {
     border-bottom: none;
 }

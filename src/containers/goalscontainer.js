@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, Fragment } from 'react'
 import uuid from 'uuid/v4'
-import GoalCard from '../components/Auth/goalcard'
+import GoalCard from '../components/Auth/Goals/goalcard'
 import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import Fade from '@material-ui/core/Fade'
