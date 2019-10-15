@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField'
 import CheckUser from './checkUser'
 import Snackbar from '@material-ui/core/Snackbar'
 
+import { BlurBox } from './blurbox'
+
 const Login = (props) => {
 
     const [username, setUsername] = useState('')
@@ -67,7 +69,7 @@ const Login = (props) => {
     return <div className='splash' onClick={handleOnClick}>
         <img src='./bgr.png' className='bg' alt=''/>
         <Fade in={true} timeout={2000}>
-            <div className='blur-box'>
+            <BlurBox>
                 <h1>Login</h1><br />
                 <form onSubmit={(e)=>handleOnSubmit(e)} className='login-form'>
                     <TextField label='Username' type='text' value={username} name='username' onChange={e=>setUsername(e.target.value)} {...textStyles}/><br />
@@ -78,7 +80,7 @@ const Login = (props) => {
                     <p className='error'>Incorrect username/password. Please try again.</p>
                 </Snackbar>
                 <p>Don't have an account? <NavLink to='/signup'>Signup</NavLink></p>
-            </div>
+            </BlurBox>
         </Fade>
         <CheckUser history={props.history} />
     </div>

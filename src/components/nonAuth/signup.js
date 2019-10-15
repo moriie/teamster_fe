@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import Snackbar from '@material-ui/core/Snackbar'
 import CheckUser from './checkUser'
 
-// import styled from 'styled-components'
+import { BlurBox } from './blurbox'
 
 
 const Signup = (props) => {
@@ -90,38 +90,3 @@ const Signup = (props) => {
 
 export default Signup;
 
-const BlurBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    top: 15%;
-    left: 30%;
-    width: 40%;
-    position: absolute;
-    z-index: 99;
-    background-color: hsla(213, 20%, 36%, 0.7);
-    padding-bottom: 2.5%;
-
-    h1 {
-        margin-bottom: 0;
-    }
-
-    .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-        border-color: white;
-    }
-
-    .MuiFormLabel-root{
-        color: white;
-    }
-
-    .MuiInput-underline:before {
-        border-bottom: none;
-    }
-
-    .MuiInput-underline:after {
-        border-bottom: none;
-    }
-
-    .MuiInput-underline:hover:not(.Mui-disabled):before {
-        border-bottom: none;
-    }
-`
