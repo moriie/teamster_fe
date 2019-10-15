@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom'
 import GoalForm from '../components/Auth/Goals/goalform'
 import GoalsContainer from './goalscontainer'
 import Main from './main'
+import PartnersContainer from '../components/Auth/Partners/partnerscontainer'
 import NetworkContainer from './networkcontainer'
 import NetworkForm from '../components/Auth/Networks/networkform'
 import Profile from '../components/Auth/Profile/profile'
@@ -26,6 +27,8 @@ const Interface = () => {
                 return <Route component={GoalsContainer} />
             case 'goals-form':
                 return <Route component={GoalForm} />
+            case 'partners-container':
+                return <Route component={PartnersContainer} />
             case 'network-container':
                 return <Route component={NetworkContainer} />
             case 'network-form':

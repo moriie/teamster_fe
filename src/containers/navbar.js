@@ -56,7 +56,7 @@ const Navbar = (props) => {
                     </IconButton>
                 </Tooltip>
                 <Tooltip title='Your Partners'>
-                    <IconButton className='nav-btn'>
+                    <IconButton className='nav-btn' onClick={()=>setView('partners-container')}>
                         <FriendIcon />
                     </IconButton>
                 </Tooltip>
