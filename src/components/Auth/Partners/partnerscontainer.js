@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import PartnerCard from './partnercard'
-import { fetchURL } from '../../../App'
+import { AuthUser, fetchURL } from '../../../App'
 
 const PartnersContainer = () => {
 
-    
+    const [user, setUser] = useContext(AuthUser)
     const [partners, setPartners] = useState([])
 
     useEffect(()=>{
         fetch(`${fetchURL}/users`)
         .then(res=>res.json())
         .then(json=>{
-            setPartners(json)
+            setPartners(json.filter((partner)=>partner.id !== user.id))
         })
     }, [])
 
     const makePartnersList = () => {
+        if (!partners.length) return <h1>Uh oh! No partners available.</h1>
         return partners.map((partner)=>{
             return <PartnerCard info={partner} />
         })
@@ -42,5 +43,17 @@ const PartnersList = styled.ul`
 
     div:first-child {
         margin-top: 0px;
+    }
+
+    ::-webkit-scrollbar {
+        width: .75vw;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #5A5C64; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #141415; 
     }
 `

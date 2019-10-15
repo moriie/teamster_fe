@@ -9,8 +9,8 @@ import './App.css';
 
 export const AuthUser = createContext([{}, ()=>{}])
 export const ViewState = createContext([{}, ()=>{}])
-// export const fetchURL = 'https://teamster-be.herokuapp.com'
-export const fetchURL = 'http://localhost:3000'
+export const fetchURL = 'https://teamster-be.herokuapp.com'
+// export const fetchURL = 'http://localhost:3000'
 
 export function App() {
 

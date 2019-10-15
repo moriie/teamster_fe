@@ -9,7 +9,7 @@ const PartnerCard = (props) => {
             <div>{props.info.username}</div>
         </Showcase>
         <UserInfo>
-            <h1>PLACEHOLDER FOR NAME, {props.info.age}</h1>
+            <h1>?PLACEHOLDER FOR NAME?, {props.info.age}</h1>
             <p>{props.info.bio ? props.info.bio : "This user has no bio..."}</p>
         </UserInfo>
         <UserInteractions>
