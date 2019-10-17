@@ -18,7 +18,7 @@ const Main = () => {
     return <Fragment>
         <Card style={{gridArea: '1/2/span 3/span 3'}} id='main-header'>
             <CardContent>
-                <CardHeader title={`Hello ${user.username}.`} className='main-header'>
+                <CardHeader title={`Hello ${user.first_name}.`} className='main-header'>
                 </CardHeader>
                 <Typography variant="body1" color="inherit" component="p">
                     What would you like to do today?

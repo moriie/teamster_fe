@@ -12,7 +12,7 @@ import { BlurBox } from './blurbox'
 
 const Signup = (props) => {
 
-    const [creds, setCreds] = useState({firstName: '', lastName: '', password: '', email: '', age: '', location: ''})
+    const [creds, setCreds] = useState({first_name: '', last_name: '', password: '', email: '', age: '', location: ''})
     const [snackbar, setSnackbar] = useState(false)
     const [errormessage, setErrormessage] = useState('')
 
@@ -70,8 +70,8 @@ const Signup = (props) => {
             <BlurBox>
             <h1>Signup</h1><br />
                 <form className='signup-form' onSubmit={(e)=>handleOnSubmit(e)}>
-                    <TextField label='First Name' type='text' value={creds.firstName} name='firstName' onChange={handleOnChange} {...textStyles} /><br />
-                    <TextField label='Last Name' type='text' value={creds.lastName} name='lastName' onChange={handleOnChange} {...textStyles} /><br />
+                    <TextField label='First Name' type='text' value={creds.first_name} name='first_name' onChange={handleOnChange} {...textStyles} /><br />
+                    <TextField label='Last Name' type='text' value={creds.last_name} name='last_name' onChange={handleOnChange} {...textStyles} /><br />
                     <TextField label='Password' type='password' value={creds.password} name='password' onChange={handleOnChange} {...textStyles}/><br />
                     <TextField label='Email' type='text' value={creds.email} name='email' onChange={handleOnChange} {...textStyles}/><br />
                     <TextField label='Age' type='text' value={creds.age} name='age' onChange={handleOnChange} {...textStyles}/><br />

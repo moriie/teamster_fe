@@ -10,7 +10,7 @@ const AuthRoutes = (props) => {
     const [loading, setloading] = useState(true)
 
     useEffect(()=> {
-        if (!!user.username){
+        if (!!user.id){
             setTimeout(()=>setloading(false), 500)
         }
     }, [user])
