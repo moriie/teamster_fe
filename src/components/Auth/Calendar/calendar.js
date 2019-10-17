@@ -16,7 +16,7 @@ const Calendar = () => {
         return <span className='cal-n' key={day+uuid()}>{day}</span>
     })
 
-    const createMonth = (date, weekdays) => {
+    const createMonth = (date) => {
         let thisMonth = []
         for (let b_day = 0; b_day < date.startOf('month').format('d'); b_day++){
             thisMonth.push(<span className='cal-d empty' key={`${b_day}-${uuid()}`}/>)

@@ -64,29 +64,33 @@ const Interactive = styled.div`
         color: whitesmoke;
         background-color: rgba(51, 51, 51, 0.188);
         box-shadow: 6px 4px 6px #333;
+        margin-top: 1vh;
     }
 
     #main-header{
         animation: none;
     }
 
-    div.MuiCardHeader-root{
-        padding-top: 0vh;
-        padding-bottom: 0vh;
-    }
-
     div.MuiCardActions-root{
         display: flex;
         flex-direction: row;
+        margin-top: 100%;
+    }
+
+    .MuiCardHeader-root, .MuiCardContent-root {
+        padding-top: 0;
+    }
+
+    div.MuiPaper-root:hover div.MuiCardActions-root{
+        animation: reveal-option .5s ease-in-out forwards;
     }
 
     div.MuiCardActions-root button{
-        margin-bottom: -100%;
         flex: 1 1 0;
     }
 
     span.MuiTypography-root{
-        font-size: 3.5vw;
+        font-size: 7vh;
         pointer-events: none;
     }
 
@@ -94,11 +98,7 @@ const Interactive = styled.div`
         pointer-events: none;
     }
 
-    div.MuiPaper-root:hover div.MuiCardActions-root button{
-        animation: reveal-option .5s ease-in-out forwards;
-    }
-
-    @keyframes reveal-option { from {margin-bottom: -100%} to {margin-bottom: 0%;}}
+    @keyframes reveal-option { from {margin-top: 100%} to {margin-top: 0%;} }
 
     .MuiTypography-root::selection{
         background-color: transparent;
@@ -114,16 +114,13 @@ const Interactive = styled.div`
         font-size: 1.5vw;
         color: whitesmoke;
     }
-
-    .MuiPaper-root {
-        margin-top: 1vh;
-    }
 `
 const Wrapper = styled.div`
+    position: relative;
     background-size: cover;
     background-image: url(${bg});
-    height: 96vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin-right: 0;
     color: white;
 `

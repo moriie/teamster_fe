@@ -30,7 +30,6 @@ const Navbar = (props) => {
     return (
     <Fade in={true} timeout={2000}>
         <NavbarWrapper>
-            <span> 
                 <NavLink to='/'>
                     <img src='teamster-logo.png' className='teamster-logo' alt='teamster-logo' />
                     <img src='teamster-name.png' className='teamster-name' alt='teamster-name' />
@@ -75,7 +74,6 @@ const Navbar = (props) => {
                         </MenuList>
                     </Popper>
                 </ClickAwayListener>
-            </span>
         </NavbarWrapper>
     </Fade>
     )
@@ -85,6 +83,7 @@ export default withRouter(Navbar);
 
 const NavbarWrapper = styled.div`
     position: relative;
+    height: 8vh;
     box-shadow: 0px 8px 4px #333;
     background-color: rgb(128, 60, 48);
 
@@ -95,8 +94,9 @@ const NavbarWrapper = styled.div`
     }
 
     .MuiAvatar-root {
-        width: 3.5vw;
-        height: 7vh;
+        height: 8vh;
+        width: 8vh;
+        margin: auto 0;
     }
 
     div.MuiTooltip-popper .MuiTooltip-tooltip{
@@ -113,14 +113,11 @@ const NavbarWrapper = styled.div`
 
     .profile-btn {
         float: right;
-        padding: 0;
-        margin: .5vh .5vw;
-        width: 64px;
-        height: 64px;
+        padding: 0 0;
     }
 
     svg.MuiSvgIcon-root{
         color: rgb(179, 153, 153);
-        font-size: 3.25vw;
+        font-size: 6vh;
     }
 `
