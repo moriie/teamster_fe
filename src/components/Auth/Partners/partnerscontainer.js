@@ -31,11 +31,9 @@ const PartnersContainer = () => {
 export default PartnersContainer
 
 const PartnersList = styled.ul`
+    grid-area: 2/2/span 17/ span 3;
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    height: 70vh;
-    margin: 5vh 25vw;
     padding: 5vh 5vh;
     align-items: center;
     overflow-y: scroll;

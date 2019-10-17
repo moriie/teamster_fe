@@ -54,7 +54,8 @@ export default withRouter(Interface)
 //----Styles----//
 
 const Interactive = styled.div`
-    grid-area: 1/1/20/10;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-rows: repeat(20, 5%);
     grid-template-columns: repeat(5, 20%);
@@ -124,8 +125,5 @@ const Wrapper = styled.div`
     height: 96vh;
     width: 100vw;
     margin-right: 0;
-    display: grid;
     color: white;
-    grid-template-rows: repeat(10, 10%);
-    grid-template-columns: repeat(5, 20%);
 `

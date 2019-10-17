@@ -6,10 +6,9 @@ const PartnerCard = (props) => {
     return <Card>
         <Showcase>
             <img src={props.info.avatar} alt={`User ${props.info.id} avatar`}/>
-            <div>{props.info.username}</div>
         </Showcase>
         <UserInfo>
-            <h1>?PLACEHOLDER FOR NAME?, {props.info.age}</h1>
+            <h1>{props.info.first_name}, {props.info.age}</h1>
             <p>{props.info.bio ? props.info.bio : "This user has no bio..."}</p>
         </UserInfo>
         <UserInteractions>
@@ -36,10 +35,6 @@ const Showcase = styled.div`
     img {
         max-width: 100%;
         border-radius: 10px;
-    }
-
-    div {
-        font-size: 18px;
     }
 `
 
