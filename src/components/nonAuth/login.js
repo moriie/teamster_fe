@@ -11,7 +11,7 @@ import { BlurBox } from './blurbox'
 
 const Login = (props) => {
 
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [snackbar, setSnackbar] = useState(false)
 
@@ -39,7 +39,7 @@ const Login = (props) => {
             },
             body: JSON.stringify({
                 user:{
-                    username: username,
+                    email: email,
                     password: password
                 }
             })
@@ -72,12 +72,12 @@ const Login = (props) => {
             <BlurBox>
                 <h1>Login</h1><br />
                 <form onSubmit={(e)=>handleOnSubmit(e)} className='login-form'>
-                    <TextField label='Username' type='text' value={username} name='username' onChange={e=>setUsername(e.target.value)} {...textStyles}/><br />
+                    <TextField label='Email' type='text' value={email} name='email' onChange={e=>setEmail(e.target.value)} {...textStyles}/><br />
                     <TextField label='Password' type='password' value={password} name='password' onChange={e=>setPassword(e.target.value)} {...textStyles}/><br />
                     <Button type='submit' variant='contained' size='large' color='primary'>Submit</Button>
                 </form>
                 <Snackbar open={snackbar} anchorOrigin={{vertical: 'bottom', horizontal: 'center'}} autoHideDuration={4000} onClose={()=>setSnackbar(false)}>
-                    <p className='error'>Incorrect username/password. Please try again.</p>
+                    <p className='error'>Incorrect email/password. Please try again.</p>
                 </Snackbar>
                 <p>Don't have an account? <NavLink to='/signup'>Signup</NavLink></p>
             </BlurBox>

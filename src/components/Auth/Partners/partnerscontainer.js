@@ -50,10 +50,10 @@ const PartnersList = styled.ul`
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #5A5C64; 
+        background-color: #6F7179; 
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: #141415; 
+        background-color: #5A5C64; 
     }
 `
