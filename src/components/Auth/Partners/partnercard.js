@@ -14,7 +14,7 @@ const PartnerCard = (props) => {
         <UserInteractions>
             <button>Add User</button>
             <button>Message</button>
-            <button>Skip</button>
+            <button onClick={()=>props.remove(props.info.id)}>Skip</button>
         </UserInteractions>
     </Card>
 

@@ -16,10 +16,19 @@ const PartnersContainer = () => {
         })
     }, [])
 
+    const removePartner = (id) => {
+        let newArr = partners
+        newArr = newArr.filter((p)=>{
+            return p.id !== id
+        })
+        setPartners(newArr)
+    }
+
+
     const makePartnersList = () => {
         if (!partners.length) return <h1>Uh oh! No partners available.</h1>
         return partners.map((partner)=>{
-            return <PartnerCard info={partner} />
+            return <PartnerCard info={partner} remove={removePartner}/>
         })
     }
 
