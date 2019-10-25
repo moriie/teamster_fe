@@ -10,18 +10,30 @@ const PartnersContainer = () => {
 
     useEffect(()=>{
 
-        Promise.all([
-        fetch(`${fetchURL}/users`),
-        fetch(`${fetchURL}/ignores/${user.id}/list`)
-        ])
-        .then(([res1, res2])=>{
-            return [res1.json(), res2.json()]
-        })
-        .then((vals)=>{
-            setTimeout(()=>console.log(vals))
-            // debugger;
-            // setPartners(partners.filter((partner)=>partner.id !== user.id && ignores.includes(partner.id)))
-        })
+        const promises = [
+            fetch(`${fetchURL}/users`),
+            fetch(`${fetchURL}/ignores/${user.id}/list`, {
+                headers: {
+                    "Authorization": document.cookie,
+                }
+            })
+        ]
+        
+        const setData = async () => {
+            const results = await Promise.all(promises)
+            console.log(results)
+        }
+
+        setData()
+        // .then(responses=>responses.map((res)=>res.json()))
+        // .then((vals)=>{
+        //     let partnersArr = vals
+        //     console.log(partnersArr)
+            // vals.forEach(()=>console.log(vals))
+            // let filteredPartners = partnersArr.filter((partner)=>partner.id !== user.id)
+            // console.log(filteredPartners)
+            // setPartners(partnersArr.filter((partner)=>partner.id !== user.id && !ignoresArr.includes(partner.id)))
+        // })
 
     }, [])
 
