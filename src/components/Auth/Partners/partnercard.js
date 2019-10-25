@@ -12,9 +12,9 @@ const PartnerCard = (props) => {
             <p>{props.info.bio ? props.info.bio : "This user has no bio..."}</p>
         </UserInfo>
         <UserInteractions>
-            <button>Add User</button>
+            <button onClick={()=>props.showGoals()}>Add User</button>
             <button>Message</button>
-            <button onClick={()=>props.remove(props.info.id)}>Skip</button>
+            <button onClick={()=>props.ignore(props.info.id)}>Skip</button>
         </UserInteractions>
     </Card>
 

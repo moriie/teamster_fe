@@ -56,7 +56,7 @@ const Login = (props) => {
             if (snackbar === false){
                 setUser({...user, ...json.user})
                 let tmr = new Date(Date.now()+86400000)
-                document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/; SameSite=None; Secure`
+                document.cookie=`jwt=${json.jwt}; expires=${tmr}; path-/;`
                 props.history.push('/dashboard')
             }
             else{

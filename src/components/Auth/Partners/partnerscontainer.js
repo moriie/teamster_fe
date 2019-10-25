@@ -9,14 +9,35 @@ const PartnersContainer = () => {
     const [partners, setPartners] = useState([])
 
     useEffect(()=>{
-        fetch(`${fetchURL}/users`)
-        .then(res=>res.json())
-        .then(json=>{
-            setPartners(json.filter((partner)=>partner.id !== user.id))
+
+        Promise.all([
+        fetch(`${fetchURL}/users`),
+        fetch(`${fetchURL}/ignores/${user.id}/list`)
+        ])
+        .then(([res1, res2])=>{
+            return [res1.json(), res2.json()]
         })
+        .then((vals)=>{
+            setTimeout(()=>console.log(vals))
+            // debugger;
+            // setPartners(partners.filter((partner)=>partner.id !== user.id && ignores.includes(partner.id)))
+        })
+
     }, [])
 
-    const removePartner = (id) => {
+    const ignorePartner = (id) => {
+
+        fetch(`${fetchURL}/ignores`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: user.id,
+                ignored_user: id
+            })
+        })
+
         let newArr = partners
         newArr = newArr.filter((p)=>{
             return p.id !== id
@@ -24,11 +45,15 @@ const PartnersContainer = () => {
         setPartners(newArr)
     }
 
+    const showGoals = () => {
+
+    }
+
 
     const makePartnersList = () => {
         if (!partners.length) return <h1>Uh oh! No partners available.</h1>
         return partners.map((partner)=>{
-            return <PartnerCard info={partner} remove={removePartner}/>
+            return <PartnerCard info={partner} ignore={ignorePartner}/>
         })
     }
 
