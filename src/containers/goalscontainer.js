@@ -17,11 +17,14 @@ const GoalsContainer = () => {
     const [goals, setGoals] = useState([])
 
     useEffect(()=>{
-        fetch(`${fetchURL}/goals`)
+        fetch(`${fetchURL}/goals/list/${user.id}`, {
+            "headers": {
+                "Authorization": document.cookie,
+            }
+        })
         .then(resp=>resp.json())
         .then((json)=>{
-            let dbgoals = json.filter((goal)=>{return goal.user_id === user.id})
-            setGoals([...goals, ...dbgoals])
+            setGoals([...goals, ...json])
         })
     }, [user])
 

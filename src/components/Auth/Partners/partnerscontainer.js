@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import PartnerCard from './partnercard'
 import { AuthUser, fetchURL } from '../../../App'
+import uuid from 'uuid/v4'
 
 const PartnersContainer = () => {
 
@@ -11,20 +12,37 @@ const PartnersContainer = () => {
     useEffect(()=>{
 
         const promises = [
-            fetch(`${fetchURL}/users`),
+
+            //fetching all possible partners
+            fetch(`${fetchURL}/users`)
+            .then(res=>res.json())
+            .then(json=>setPartners(json))
+            .catch(error=>console.log(error)),
+
+            //filtering out any ignored partners
             fetch(`${fetchURL}/ignores/${user.id}/list`, {
                 headers: {
                     "Authorization": document.cookie,
                 }
             })
+            .then(res=>res.json())
+            .then(json=>{
+                let newArr = partners.filter(partner=>!json.include(partner.id))
+                setPartners(newArr)
+            })
+            .catch(error=>console.log(error))
+
         ]
         
         const setData = async () => {
             const results = await Promise.all(promises)
+            // return results
             console.log(results)
+            // console.log(await Promise.all(promises))
         }
 
         setData()
+        
         // .then(responses=>responses.map((res)=>res.json()))
         // .then((vals)=>{
         //     let partnersArr = vals
@@ -34,7 +52,6 @@ const PartnersContainer = () => {
             // console.log(filteredPartners)
             // setPartners(partnersArr.filter((partner)=>partner.id !== user.id && !ignoresArr.includes(partner.id)))
         // })
-
     }, [])
 
     const ignorePartner = (id) => {
@@ -65,7 +82,7 @@ const PartnersContainer = () => {
     const makePartnersList = () => {
         if (!partners.length) return <h1>Uh oh! No partners available.</h1>
         return partners.map((partner)=>{
-            return <PartnerCard info={partner} ignore={ignorePartner}/>
+            return <PartnerCard key={partner.id} info={partner} ignore={ignorePartner}/>
         })
     }
 
