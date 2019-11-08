@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { AuthUser } from '../../App'
-import Navbar from '../../containers/navbar'
+import Navbar from './Navbar/navbar'
 import Modal from '@material-ui/core/Modal'
 
 const AuthRoutes = (props) => {

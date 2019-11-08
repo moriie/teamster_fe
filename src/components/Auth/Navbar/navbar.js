@@ -13,12 +13,12 @@ import MenuList from '@material-ui/core/MenuList'
 import MenuItem from '@material-ui/core/MenuItem'
 import Popper from '@material-ui/core/Popper'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
-import Profile from '../components/Auth/Profile/profile'
+import Profile from '../Profile/profile'
 
 import styled from 'styled-components'
 
-import { AuthUser } from '../App'
-import { ViewState } from '../App'
+import { AuthUser } from '../../../App'
+import { ViewState } from '../../../App'
 
 const Navbar = (props) => {
 
