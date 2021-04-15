@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import PartnerCard from './partnercard'
 import { AuthUser, fetchURL } from '../../../App'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 
 const PartnersContainer = () => {
 

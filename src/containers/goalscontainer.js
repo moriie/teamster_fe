@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, Fragment } from 'react'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 import GoalCard from '../components/Auth/Goals/goalcard'
 import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'

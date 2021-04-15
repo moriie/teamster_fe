@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import Fade from '@material-ui/core/Fade'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 import CheckUser from './checkUser'
 
 import styled from 'styled-components'

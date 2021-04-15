@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 
 const Calendar = () => {
 
